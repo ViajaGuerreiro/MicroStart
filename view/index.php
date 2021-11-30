@@ -2,8 +2,7 @@
 include_once("Header.php");
 ?>
 
-
-<div class="container-fluid" style="padding-top: 90px;  background-color:orange;">
+<div class="container-fluid" style="padding-top: 90px;  background-image:linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);">
 
 <div class="row">
 	
@@ -37,7 +36,7 @@ include_once("Header.php");
         <div class="row">
           <div class="col-md-6 d-flex"><!-- Textos da seção -->
             <div class="align-center">
-              <h1 class="display-4">Ache fornecedores</h1>
+              <h1 class="display-4">Ache fornecedores aqui!</h1>
               <p>
                Já pensou em empreender? Essa é sua chance. Ache fornecedores de graça e sem sair de casa.
             </p>
@@ -49,7 +48,7 @@ include_once("Header.php");
                 <div class="input-group input-group-lg">
                   
                   <div class="">
-                    <button style="padding: 10px" class="btn btn-primary">Cadastre-se</button>
+                  <button style="padding: 10px" class="btn btn-primary">Cadastrar</button>
                   </div>
                 </div>
               </form>

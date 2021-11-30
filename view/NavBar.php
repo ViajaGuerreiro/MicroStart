@@ -25,7 +25,7 @@
 
           <!--Logo-->
 
-         <a href="#" class="navbar-brand">
+         <a href="../index.php" class="navbar-brand">
             <img src="" width="142"> MicroStart
          </a>
          <!--Menu Hamburguer-->
@@ -61,7 +61,7 @@
                 <a href="" class="nav-link active">Quem somos</a>
               </li>
               <li class="nav-item">
-                <a href="" class="btn  btn-outline-dark ml-4">Entrar</a>
+                <a href="LoginCadastro.php" class="btn  btn-outline-dark ml-4">Entrar</a>
               </li class="nav-item">
               <li class="nav-item">
                   <a href="#" class="navbar-brand">
@@ -78,7 +78,6 @@
 
     <section><!-- Início seção home -->
       <div class="boxizinhos">
-  <h1>llalal  </h1>
        </div>
       <div class="container">
         <div class="row">

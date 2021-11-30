@@ -27,7 +27,7 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: orange;
+    background-color: rgba(255, 68, 0, 0.842);
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -43,7 +43,7 @@ body {
     color: #fff;
 }
 .title-second {
-    color: orange;
+    color: rgba(255, 68, 0, 0.842);
 }
 .description {
     font-size: 14px;
@@ -54,7 +54,7 @@ body {
     color: #fff;
 }
 .description-second {
-    color: orange;
+    color: rgba(255, 68, 0, 0.842);
 }
 .btn {
     border-radius: 15px;
@@ -79,13 +79,13 @@ body {
     color: #58af9b;
 }
 .btn-second {
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: rgba(255, 68, 0, 0.842);
+    border: 1px solid rgba(255, 68, 0, 0.842);
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid orange;
+    border: 1px solid rgba(255, 68, 0, 0.842);
     color: #58af9b;
 }
 .first-content {
@@ -115,9 +115,9 @@ body {
     transition: background-color .5s;
 }
 .link-social-media:hover .item-social-media{
-    background-color: orange;
+    background-color: orangered;
     color: #fff;
-    border-color: orange;
+    border-color: orangered;
 }
 .list-social-media {
     display: flex;
@@ -511,8 +511,4 @@ input:-webkit-autofill
     .form {
         width: 100%;
     }
-}
-
-a{
-    color: white;
 }
