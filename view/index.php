@@ -48,7 +48,11 @@ include_once("Header.php");
                 <div class="input-group input-group-lg">
                   
                   <div class="">
+<<<<<<< HEAD
                    <button style="padding: 10px" class="btn btn-primary" >Cadastrar</button>
+=======
+                  <button style="padding: 10px" class="btn btn-primary">Cadastrar</button>
+>>>>>>> 9af078b9f93ccdb80cf46183b6ff3eb5da94b920
                   </div>
                 </div>
               </form>
