@@ -14,15 +14,15 @@
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="style/style.css">
 
-   <title>MicroStart Home</title>
+   <title>MicroStart</title>
 
 </head>
 <body>
  <header><!--início do cabeçalho-->
-      <nav class="navbar navbar-expand-sm navbar-dark fixed-top "  style="background-color:orange;"> 
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top "  style="background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);"> 
        <div class="container-fluid">
           <!--Logo-->
-         <a href="#" class="navbar-brand">
+         <a href="index.php" class="navbar-brand">
             <img src="imagens/logo.png"  width="300" heigth="200"> 
          </a>
          <!--Menu Hamburguer-->
@@ -33,7 +33,7 @@
           
             <form class="form-inline input-group w-auto my-auto">
                 <input autocomplete="off" type="search" class="form-control rounded" placeholder="Pesquisar produtos..."
-            style="min-width: 125px" />
+            style="width: 500px"  />
           <span class="input-group-text border-0 d-none d-md-flex"><i class="fas fa-search"></i></span>
                
                
@@ -54,12 +54,12 @@
         </li>
 
               <li class="nav-item">
-                <a href="" class="btn btn-outline-dark ml-4">Anunciar</a>
+                <a href="Anunciar.php" class="btn btn-outline-dark ml-4">Anunciar</a>
               </li>
 
         
               <li class="nav-item">
-                <a href="" class="btn  btn-outline-dark ml-4">Entrar</a>
+                <a href="FornecedorCliente.php" class="btn  btn-outline-dark ml-4">Entrar</a>
               </li class="nav-item">
 
               

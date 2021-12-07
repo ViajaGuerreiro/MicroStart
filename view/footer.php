@@ -1,4 +1,4 @@
-<div  class="bg-dark text-white pt-5 ">
+<div  class="bg-dark text-white pt-5 " style="margin-left: -112px; margin-right: -112px;">
       <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">
          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
@@ -12,6 +12,7 @@
             <p>Como anunciar seus produtos</p>
             <p>Frete e prazo de entrega</p>
             <p>Formas de pagamento</p>
+            <p>Dúvidas</p>
          </div>
 
          <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">  
