@@ -3,7 +3,7 @@
 if(!$_SESSION['id_cli']) {
 
     //Lembrete: Direcionar pagina depois.
-    header("Location: ../view/login.php");
+    header("Location: ../View/loginCli.php");
     exit();
 }
 

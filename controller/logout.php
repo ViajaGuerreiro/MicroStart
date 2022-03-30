@@ -4,7 +4,7 @@ session_start();
 session_destroy();
 
 //Lembrete: Direcionar pagina depois.
-header("Location: ../view/index.php");
+header("Location: ../index.php");
 exit();
 
 ?>
