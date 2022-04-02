@@ -9,10 +9,13 @@
 <body>
     <main>
 <?php
-    include_once '../model/conexao.php';
-    include_once '../model/modelCli.php';
+    session_start();
+    include_once '../controller/verificaLogin.php';
+    include_once '../model/ClienteDao.php';
 
-    $linha = mostrarDadosCli($conexao);
+    $clienteDao = new ClienteDao();
+    $linhas = $clienteDao->read($_SESSION['id']);
+    foreach($linhas as $linha) {
 
 ?>
         <h1>Alterar dados do Cliente</h1>
@@ -54,3 +57,5 @@
     </main>
 </body>
 </html>
+<?php
+    }

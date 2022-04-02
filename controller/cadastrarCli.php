@@ -1,19 +1,30 @@
 <?php
+    session_start();
 
-    include_once("../model/conexao.php");
-    include_once("../model/modelCli.php");
+    include_once("../model/Cliente.php");
+    include_once("../model/ClienteDao.php");
     extract($_REQUEST, EXTR_OVERWRITE);
 
     if($nome != "") {
-    cadastrarCli($conexao,$nome, $sobrenome, $data_nasc, $cnpj, $email, $senha);
+        $cliente = new Cliente();
+        $cliente->setNome($nome);
+        $cliente->setSobrenome($sobrenome);
+        $cliente->setDataNasc($data_nasc);
+        $cliente->setCnpj($cnpj);
+        $cliente->setEmail($email);
+        $cliente->setSenha($senha);
+
+        $clienteDao = new ClienteDao();
+        $clienteDao->create($cliente);
+        $clienteDao->login($cliente->getEmail(), $senha);
+        
 
     //Lembrete: Direcionar pagina depois.
-    echo " <script>
-                alert('Usuario Cadastrado');
+        echo " <script>
+                    alert('Usuario Cadastrado');
 
-                window.location.href = '../view/loginCli.php';
-            </script>
-    ";
+                    window.location.href = '../view/loginCli.php';
+                </script>";
     } else {
         echo 'erro';
     }
