@@ -138,7 +138,7 @@ if (isset($_SESSION['id_cli'])) {
                 </div>
         </section>
     </main>
-<label>aaaaaaa</label>
+
 </body>
 
 </html>
