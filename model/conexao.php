@@ -16,7 +16,7 @@ final class Conexao
     {
         if(!isset(self::$instance)) {
             try {
-                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root','Ju17072004');
+                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root','');
             }
              catch (PDOException $erro) {
                 echo 'Erro no banco de dados: ' . $erro->getMessage();
