@@ -6,26 +6,17 @@ final class Conexao
 {
     private static $instance;
 
-    private function __construct()
-    {
-        
-    }
+    //private function __construct(){}
 
-    private function __clone()
-    {
-        
-    }
+    //private function __clone(){}
 
-    private function __wakeup()
-    {
-        
-    }
+    // private function __wakeup(){}
     
     public static function getInstance() : PDO
     {
         if(!isset(self::$instance)) {
             try {
-                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root','');
+                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root','Ju17072004');
             }
              catch (PDOException $erro) {
                 echo 'Erro no banco de dados: ' . $erro->getMessage();

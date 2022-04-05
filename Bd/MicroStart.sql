@@ -133,5 +133,6 @@ alter table cliente
 modify cod_cli int auto_increment;
 
 insert into cliente(email, senha, nome, sobrenome, data_nasc, cnpj ) values('{$email}', '{$senhaCrypto}', '$nome', '$sobrenome', '2022/06/03', '6546545416');
+select * from telefone_cli;
 
-select * from cliente;
+select * from telefone_cli;

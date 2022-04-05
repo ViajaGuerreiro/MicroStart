@@ -101,4 +101,33 @@ class ClienteDao
         }
         exit();
     }
+
+}
+
+class Tel_ClieDao{
+    public function adicionar(Tel_Clie $tel_Clie){
+        $sql = "INSERT INTO telefone_cli(telefone, ddd) values (?,?);";
+
+        $adicionar = Conexao::getInstance()->prepare($sql);
+        $adicionar -> bindValue(1, $tel_Clie->getTelefone());
+        $adicionar -> bindValue(2, $tel_Clie->getDDD());
+        $adicionar->execute();
+
+    }
+}
+
+class EnderecoDao{
+    public function add(Endereco $endereco){
+        $sql = "INSERT INTO endereco(rua, cidade, uf, pais, bairro, cep) values (?, ?, ?, ?, ?, ?);";
+
+        $add = Conexao::getInstance()->prepare($sql);
+        $add -> bindValue(1, $endereco -> getRua());
+        $add -> bindValue(2, $endereco -> getCidade());
+        $add -> bindValue(3, $endereco -> getUF());
+        $add -> bindValue(4, $endereco -> getPais());
+        $add -> bindValue(5, $endereco -> getBairro());
+        $add -> bindValue(6, $endereco -> getCep());
+        $add -> execute();
+
+    }
 }
