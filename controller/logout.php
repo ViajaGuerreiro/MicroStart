@@ -3,8 +3,12 @@
 session_start();
 session_destroy();
 
-//Lembrete: Direcionar pagina depois.
-header("Location: ../index.php");
+echo " <script>
+                alert('Sessão encerrada');
+
+                window.location.href = '../index.php';
+            </script>";
+
 exit();
 
 ?>

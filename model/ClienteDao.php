@@ -1,9 +1,10 @@
 <?php
 
-require 'Conexao.php';
+require_once 'Conexao.php';
 
 class ClienteDao
 {
+    //tabela cliente
     public function create(Cliente $cliente)
     {
         $sql = "INSERT INTO cliente(nome, sobrenome, data_nasc, cnpj, email, senha ) VALUES(?,?,?,?,?,?)";
@@ -16,6 +17,37 @@ class ClienteDao
         $cadastrar->bindValue(5, $cliente->getEmail());
         $cadastrar->bindValue(6, $cliente->getSenha());
         $cadastrar->execute();
+    }
+
+    //tabela telefone
+    public function createTel(Cliente $cliente){
+        $sql = "INSERT INTO telefone_cli(cod_cli, telefone, ddd) values (?,?,?);";
+
+        $cadastrar = Conexao::getInstance()->prepare($sql);
+        $cadastrar -> bindValue(1, $cliente->getCod());
+        $cadastrar -> bindValue(2, $cliente->getTelefone1());
+        $cadastrar -> bindValue(3, $cliente->getDDD1());
+        $cadastrar->execute();
+        $cadastrar -> bindValue(1, $cliente->getCod());
+        $cadastrar -> bindValue(2, $cliente->getTelefone2());
+        $cadastrar -> bindValue(3, $cliente->getDDD2());
+        $cadastrar->execute();
+
+    }
+
+    //tabela Endereco
+    public function createEnd(Cliente $cliente){
+        $sql = "INSERT INTO endereco(rua, cidade, uf, pais, bairro, cep) values (?, ?, ?, ?, ?, ?);";
+
+        $add = Conexao::getInstance()->prepare($sql);
+        $add -> bindValue(1, $cliente -> getRua());
+        $add -> bindValue(2, $cliente -> getCidade());
+        $add -> bindValue(3, $cliente -> getUF());
+        $add -> bindValue(4, $cliente -> getPais());
+        $add -> bindValue(5, $cliente -> getBairro());
+        $add -> bindValue(6, $cliente -> getCep());
+        $add -> execute();
+
     }
 
     public function read($id)
@@ -74,13 +106,12 @@ class ClienteDao
 
             if(password_verify($senha, $dado['senha'])) {
                 $_SESSION['id'] = $dado['cod_cli'];
-
                 echo " <script>
-                        alert('Usuario Logado');
+                    alert('Usuario Logado');
 
-                         window.location.href = '../index.php';
-                        </script>";
-                        exit();
+                    window.location.href = '../index.php';
+                </script>";
+                exit();
             }
             else {
                 echo " <script>
@@ -102,32 +133,40 @@ class ClienteDao
         exit();
     }
 
-}
+    public function verificarEmailCnpj(Cliente $cliente) {
+        $sql = 'SELECT cnpj, email FROM cliente WHERE cnpj = ? OR email = ?';
 
-class Tel_ClieDao{
-    public function adicionar(Tel_Clie $tel_Clie){
-        $sql = "INSERT INTO telefone_cli(telefone, ddd) values (?,?);";
+        $verificar = Conexao::getInstance()->prepare($sql);
+        $verificar->bindValue(1, $cliente->getCnpj());
+        $verificar->bindValue(2, $cliente->getEmail());
+        $verificar->execute();
 
-        $adicionar = Conexao::getInstance()->prepare($sql);
-        $adicionar -> bindValue(1, $tel_Clie->getTelefone());
-        $adicionar -> bindValue(2, $tel_Clie->getDDD());
-        $adicionar->execute();
+        if($verificar->rowCount() > 0) {
+            echo " <script>
+                        alert('Email ou CNPJ já cadastrados');
 
+                        window.location.href = '../view/cadastrarCli.php';
+                    </script>";
+        } else {
+            return 'certo';
+        }
     }
-}
 
-class EnderecoDao{
-    public function add(Endereco $endereco){
-        $sql = "INSERT INTO endereco(rua, cidade, uf, pais, bairro, cep) values (?, ?, ?, ?, ?, ?);";
+    public function verificarTel(Cliente $cliente) {
+        $sql = 'SELECT telefone FROM telefone_cli WHERE telefone = ?';
 
-        $add = Conexao::getInstance()->prepare($sql);
-        $add -> bindValue(1, $endereco -> getRua());
-        $add -> bindValue(2, $endereco -> getCidade());
-        $add -> bindValue(3, $endereco -> getUF());
-        $add -> bindValue(4, $endereco -> getPais());
-        $add -> bindValue(5, $endereco -> getBairro());
-        $add -> bindValue(6, $endereco -> getCep());
-        $add -> execute();
+        $verificarTel = Conexao::getInstance()->prepare($sql);
+        $verificarTel->bindValue(1, $cliente->getTelefone1());
+        $verificarTel->execute();
 
+        if($verificarTel->rowCount() > 0) {
+            return 'erro';
+            echo " <script>
+                        alert('Telefone já cadastrado');
+
+                        window.location.href = '../view/cadastrarCli.php';
+                    </script>";
+        }
     }
+
 }

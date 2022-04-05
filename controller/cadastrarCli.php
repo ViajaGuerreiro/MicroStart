@@ -1,12 +1,14 @@
 <?php
     session_start();
-
-    include_once("../model/Cliente.php");
-    include_once("../model/ClienteDao.php");
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    if($nome != "") {
+    if($nome != "" && $sobrenome != "" && $data_nasc != "" && $cnpj != "" && $email != "" && $senha != "" && $ddd1 != "" && $tel1 != "") {
+        require_once("../model/Cliente.php");
+        require_once("../model/ClienteDao.php");
+        
         $cliente = new Cliente();
+
+        //tabela cliente
         $cliente->setNome($nome);
         $cliente->setSobrenome($sobrenome);
         $cliente->setDataNasc($data_nasc);
@@ -14,18 +16,35 @@
         $cliente->setEmail($email);
         $cliente->setSenha($senha);
 
+        //tabela telefone
+        $cliente->setDDD1($ddd1);
+        $cliente->setTelefone1($tel1);
+        $cliente->setDDD2($ddd2);
+        $cliente->setTelefone2($tel2);
         $clienteDao = new ClienteDao();
-        $clienteDao->create($cliente);
-        $clienteDao->login($cliente->getEmail(), $senha);
-        
 
-    //Lembrete: Direcionar pagina depois.
-        echo " <script>
-                    alert('Usuario Cadastrado');
+        if($clienteDao->verificarEmailCnpj($cliente) == 'certo') {
+            // $clienteDao->verificarTel($cliente);
 
-                    window.location.href = '../view/loginCli.php';
-                </script>";
+            $clienteDao->create($cliente);
+/*/arrumar
+            $cliente->setCod(2);
+            $clienteDao->createTel($cliente);*/
+
+            echo " <script>
+                        alert('Usuario Cadastrado');
+
+                        window.location.href = '../view/loginCli.php';
+                    </script>";
+            
+            $clienteDao->login($cliente->getEmail(), $senha);
+        }
+
     } else {
-        echo 'erro';
+        echo " <script>
+                    alert('Preencha todos os dados de cadastro');
+
+                    window.location.href = '../view/cadastrarCli.php';
+                </script>";
     }
 ?>

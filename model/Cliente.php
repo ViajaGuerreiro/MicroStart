@@ -3,8 +3,6 @@
 class Cliente
 {
 
-
-
 /*
 //tabela conexão do endereço
     public int $num_casa;
@@ -72,31 +70,42 @@ class Cliente
         $this->senha = $senha;
     }
 
-}
+     //tabela telefone
+     private $telefone1, $ddd1, $telefone2, $ddd2;
 
-Class Tel_Clie{
-    //tabela telefone
-    private $telefone, $ddd;
+     public function setTelefone1($telefone1){
+         $this -> telefone1 = $telefone1;
+     }
+ 
+     public function getTelefone1(){
+         return $this -> telefone1;
+     }
+ 
+     public function setDDD1($ddd1){
+         $this -> ddd1 = $ddd1;
+     }
+ 
+     public function getDDD1(){
+         return $this -> ddd1;
+     }
 
-    public function setTelefone($telefone){
-        $this -> telefone = $telefone;
-    }
+     public function setTelefone2($telefone2){
+         $this -> telefone2 = $telefone2;
+     }
+ 
+     public function getTelefone2(){
+         return $this -> telefone2;
+     }
+ 
+     public function setDDD2($ddd2){
+         $this -> ddd2 = $ddd2;
+     }
+ 
+     public function getDDD2(){
+         return $this -> ddd2;
+     }
 
-    public function getTelefone(){
-        return $this -> telefone;
-    }
-
-    public function setDDD($ddd){
-        $this -> ddd = $ddd;
-    }
-
-    public function getDDD(){
-        return $this -> ddd;
-    }
-}
-
-Class Endereco{
-    // tabela endereço
+     // tabela endereço
 
     private $rua, $cidade, $uf, $pais, $bairro, $cep;
 
@@ -147,4 +156,5 @@ Class Endereco{
     public function getCep(){
         return $this -> cep;
     }
+
 }

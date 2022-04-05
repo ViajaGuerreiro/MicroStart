@@ -11,7 +11,7 @@
 <?php
     session_start();
     include_once '../controller/verificaLogin.php';
-    include_once '../model/ClienteDao.php';
+    require_once '../model/ClienteDao.php';
 
     $clienteDao = new ClienteDao();
     $linhas = $clienteDao->read($_SESSION['id']);

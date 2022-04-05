@@ -26,6 +26,27 @@
                     <input required type="date" name="data_nasc" id="cxData_nasc">
                 </div>
 
+                <div id="form-cadastro-ddd1">
+                    <label for="cxDdd1">DDD</label>
+                    <input maxlength="2" required type="text" name="ddd1" id="cxDdd1">
+                </div>
+
+                <div id="form-cadastro-tel1">
+                    <label for="cxTel1">Celular</label>
+                    <input maxlength="10" required type="text" name="tel1" id="cxTel1">
+                </div>
+
+                <div id="form-cadastro-ddd2">
+                    <Strong>Opcional</Strong>
+                    <label for="cxDdd1">DDD</label>
+                    <input maxlength="2" type="text" name="ddd2" id="cxDdd2">
+                </div>
+
+                <div id="form-cadastro-tel2">
+                    <label for="cxTel2">Celular</label>
+                    <input maxlength="10" type="text" name="tel2" id="cxTel2">
+                </div>
+
                 <div id="form-cadastro-cnpj">
                     <label for="cxCNPJ">CNPJ:</label>
                     <input maxlength="18" required type="text" name="cnpj" id="cxCNPJ">
