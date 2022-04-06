@@ -17,22 +17,22 @@ class ClienteDao
         $cadastrar->bindValue(5, $cliente->getEmail());
         $cadastrar->bindValue(6, $cliente->getSenha());
         $cadastrar->execute();
-    }
 
-    //tabela telefone
-    public function createTel(Cliente $cliente){
-        $sql = "INSERT INTO telefone_cli(cod_cli, telefone, ddd) values (?,?,?);";
+        $id = Conexao::getInstance()->lastInsertId();
 
-        $cadastrar = Conexao::getInstance()->prepare($sql);
-        $cadastrar -> bindValue(1, $cliente->getCod());
-        $cadastrar -> bindValue(2, $cliente->getTelefone1());
-        $cadastrar -> bindValue(3, $cliente->getDDD1());
-        $cadastrar->execute();
-        $cadastrar -> bindValue(1, $cliente->getCod());
-        $cadastrar -> bindValue(2, $cliente->getTelefone2());
-        $cadastrar -> bindValue(3, $cliente->getDDD2());
-        $cadastrar->execute();
+    //Tabela Telefone
 
+        $sql2 = "INSERT INTO telefone_cli(cod_cli, telefone, ddd) values (?,?,?)";
+
+        $cadastrarTel = Conexao::getInstance()->prepare($sql2);
+        $cadastrarTel->bindValue(1, $id);
+        $cadastrarTel->bindValue(2, $cliente->getTelefone1());
+        $cadastrarTel->bindValue(3, $cliente->getDDD1());
+        $cadastrarTel->execute();
+        $cadastrarTel->bindValue(1, $id);
+        $cadastrarTel->bindValue(2, $cliente->getTelefone2());
+        $cadastrarTel->bindValue(3, $cliente->getDDD2());
+        $cadastrarTel->execute();
     }
 
     //tabela Endereco
@@ -81,6 +81,7 @@ class ClienteDao
         $alterar->bindValue(7, $cliente->getCod());
 
         $alterar->execute();
+
     }
 
     public function delete($cod)
@@ -153,19 +154,28 @@ class ClienteDao
     }
 
     public function verificarTel(Cliente $cliente) {
-        $sql = 'SELECT telefone FROM telefone_cli WHERE telefone = ?';
+        $sql = 'SELECT telefone, ddd FROM telefone_cli WHERE telefone = ? AND ddd = ?';
 
         $verificarTel = Conexao::getInstance()->prepare($sql);
         $verificarTel->bindValue(1, $cliente->getTelefone1());
+        $verificarTel->bindValue(2, $cliente->getDDD1());
         $verificarTel->execute();
 
-        if($verificarTel->rowCount() > 0) {
-            return 'erro';
+        $sql2 = 'SELECT telefone, ddd FROM telefone_cli WHERE telefone = ? AND ddd = ?';
+
+        $verificarTel2 = Conexao::getInstance()->prepare($sql2);
+        $verificarTel2->bindValue(1, $cliente->getTelefone2());
+        $verificarTel2->bindValue(2, $cliente->getDDD2());
+        $verificarTel2->execute();
+
+        if($verificarTel->rowCount() > 0 || $verificarTel2->rowCount() > 0) {
             echo " <script>
                         alert('Telefone já cadastrado');
 
                         window.location.href = '../view/cadastrarCli.php';
                     </script>";
+        } else {
+            return 'certo';
         }
     }
 

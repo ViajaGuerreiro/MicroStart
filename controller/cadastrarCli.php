@@ -23,21 +23,19 @@
         $cliente->setTelefone2($tel2);
         $clienteDao = new ClienteDao();
 
-        if($clienteDao->verificarEmailCnpj($cliente) == 'certo') {
-            // $clienteDao->verificarTel($cliente);
+        if($clienteDao->verificarEmailCnpj($cliente) == 'certo')
+        {
+            if($clienteDao->verificarTel($cliente) == 'certo')
+            {
+                $clienteDao->create($cliente);
 
-            $clienteDao->create($cliente);
-/*/arrumar
-            $cliente->setCod(2);
-            $clienteDao->createTel($cliente);*/
+                echo " <script>
+                            alert('Usuario Cadastrado');
 
-            echo " <script>
-                        alert('Usuario Cadastrado');
-
-                        window.location.href = '../view/loginCli.php';
-                    </script>";
+                            window.location.href = '../view/loginCli.php';
+                        </script>";
             
-            $clienteDao->login($cliente->getEmail(), $senha);
+            }
         }
 
     } else {
