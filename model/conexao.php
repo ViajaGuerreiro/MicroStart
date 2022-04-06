@@ -1,5 +1,8 @@
 <?php
 
+
+include_once('../credenciais/credenciais.php');
+
 declare (strict_types = 1);
 
 final class Conexao
@@ -22,7 +25,7 @@ final class Conexao
     {
         if(!isset(self::$instance)) {
             try {
-                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root','');
+                self::$instance = new PDO("mysql:host=localhost; dbname=microstart; charset=utf8", 'root',"$senha");
             }
              catch (PDOException $erro) {
                 echo 'Erro no banco de dados: ' . $erro->getMessage();
