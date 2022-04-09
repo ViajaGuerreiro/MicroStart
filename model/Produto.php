@@ -45,7 +45,7 @@ class Produto{
     }
 
     public function getNomeMarca(){
-        return this -> nomeMarca;
+        return $this -> nomeMarca;
     }
 
     //tabela categoria
@@ -57,7 +57,7 @@ class Produto{
     }
 
     public function getTipo(){
-        return this -> tipo;
+        return $this -> tipo;
     }
 }
  

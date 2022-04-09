@@ -48,13 +48,10 @@ if (isset($_SESSION['id_cli'])) {
                             <a href="">home</a>
                         </li>
                         <li>
-                            <a href="">plano</a>
+                            <a href="view/cadastrarProduto.php">produto</a>
                         </li>
                         <li>
                             <a href="View/alterarDadosCli.php">Dados</a>
-                        </li>
-                        <li>
-                            <a href="view/cadastrarTel.php">Adicionar Info</a>
                         </li>
                         <!-- Lembrete: O Sair/logout vai ficar no lugar do botao Login dinamicamente com o Js quando o usuario estiver logado   -->
                         <li>
