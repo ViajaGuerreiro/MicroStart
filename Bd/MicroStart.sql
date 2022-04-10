@@ -10,6 +10,8 @@ cod_cli int primary key auto_increment
 , cnpj varchar(18) not null
 , email varchar(50) not null
 , senha varchar(100) not null
+//Deixar valor default(G) (G para gratuito e P para premium)
+, plano char(1) not null
 );
 
 create table telefone_cli(
