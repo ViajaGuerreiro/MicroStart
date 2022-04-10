@@ -22,11 +22,6 @@ cod_tel int primary key auto_increment
 
 create table endereco(
 cod_end int primary key auto_increment
-, rua varchar(35) not null
-, cidade varchar(25) not null
-, uf char(2) not null
-, pais varchar(15) not null
-, bairro varchar(35) not null
 , cep int(9) not null
 );
 
@@ -40,32 +35,10 @@ cod_con_end_cli int primary key auto_increment
 , constraint cod_end foreign key(cod_end) references endereco(cod_end)
 );
 
-create table fornecedor(
-cod_forn int primary key auto_increment
-, cnpj int(18) not null
-, nome varchar(20) not null
-, sobrenome varchar(35) not null
-, data_nasc date not null
-, email varchar(50) not null
-, senha varchar(100) not null 
-);
-
-create table con_end_forn(
-cod_con_end_forn int primary key auto_increment
-, cod_forn integer
-, cod_end integer
-, num_casa int(5) not null
-, complemento_casa varchar(35) not null
-, constraint cod_forn foreign key(cod_forn) references fornecedor(cod_forn)
-, constraint cod_end foreign key(cod_end) references endereco(cod_end)
-);
-
-create table telefone_forn(
-cod_tel_forn int primary key auto_increment
-, cod_forn integer
-, telefone int(10) not null
-, ddd int(2) not null
-, constraint cod_forn foreign key(cod_forn) references fornecedor(cod_forn) 
+Create table Fornecedor (
+Cod_forn int primary key auto_increment
+, cod_cli int
+, Constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
 );
 
 create table marca(
@@ -78,6 +51,7 @@ cod_categoria int primary key auto_increment
 , tipo varchar(20) not null
 );
 
+//Rever depois
 create table produto(
 cod_produto int primary key auto_increment
 , cod_marca integer
@@ -88,6 +62,13 @@ cod_produto int primary key auto_increment
 , quantidade int(6) not null
 , constraint cod_marca foreign key(cod_marca) references marca(cod_marca)
 , constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
+);
+
+// Rever depois
+Create table lote(
+Cod_lote int primary key auto_increment
+, quant_lote
+, quant_produto_lote
 );
 
 create table con_produto(
@@ -129,10 +110,5 @@ cod_item_venda int primary key auto_increment
 , constraint cod_produto foreign key(cod_produto) references produto(cod_produto)
 );
 
-alter table cliente
-modify cod_cli int auto_increment;
-
 insert into cliente(email, senha, nome, sobrenome, data_nasc, cnpj ) values('{$email}', '{$senhaCrypto}', '$nome', '$sobrenome', '2022/06/03', '6546545416');
 select * from telefone_cli;
-
-select * from produto;
