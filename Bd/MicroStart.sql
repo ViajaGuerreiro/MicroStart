@@ -52,8 +52,8 @@ cod_categoria int primary key auto_increment
 );
 
 //Rever depois
-create table produto(
-cod_produto int primary key auto_increment
+create table lote(
+cod_lote int primary key auto_increment
 , cod_marca integer
 , cod_categoria integer
 , nome varchar(30) not null
@@ -64,17 +64,10 @@ cod_produto int primary key auto_increment
 , constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
 );
 
-// Rever depois
-Create table lote(
-Cod_lote int primary key auto_increment
-, quant_lote
-, quant_produto_lote
-);
-
-create table con_produto(
-cod_forn_produto int primary key auto_increment
+create table con_lote(
+cod_forn_lote int primary key auto_increment
 , cod_forn integer
-, cod_produto integer
+, cod_lote integer
 , constraint cod_forn foreign key(cod_forn) references fornecedor(cod_forn)
 , constraint cod_produto foreign key(cod_produto) references produto(cod_produto)
 );
@@ -103,7 +96,7 @@ cod_venda int primary key auto_increment
 create table item_venda(
 cod_item_venda int primary key auto_increment
 , cod_venda integer
-, cod_produto integer
+, cod_lote integer
 , quantidade int(6) not null
 , preco float(10) not null
 , constraint cod_venda foreign key(cod_venda) references venda(cod_venda)
