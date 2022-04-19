@@ -22,11 +22,11 @@
                     <label for="cxCategoria">Categoria:</label>
                     <select required type="text" name="categoria" id="cxCategoria">
                         <option disabled selected>Selecione...</option>
-                        <option value="moda">Moda</option>
-                        <option value="tecnologia">Tecnologia</option>
-                        <option value="eletrodomesticos">Eletrodomésticos</option>
-                        <option value="construcao">Construção</option>
-                        <option value="outros">Outros</option>
+                        <option value="1">Moda</option>
+                        <option value="2">Tecnologia</option>
+                        <option value="3">Eletrodomésticos</option>
+                        <option value="4">Construção</option>
+                        <option value="5">Outros</option>
                     </select>
                 </div>
             -->
