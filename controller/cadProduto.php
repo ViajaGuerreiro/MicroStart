@@ -2,26 +2,28 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    if($nomeprod != "" && $preco != "" && $tamanho != "" && $quantidade != "" && $nomeMarca != "" && $tipo != "") {
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
         
         $produto = new Produto();
     
         //tabela produto
-        $produto->setNomeProd($nomeprod);
-        $produto->setPreco($preco);
+        $produto->setProduto($nomeProduto);
+        $produto->setPrecoLote($preco);
+        $produto->setQil($QIL);
         $produto->setTamanho($tamanho);
-        $produto->setQuantidade($quantidade);
+        $produto->setLotesDisponiveis($disponivel);
+        $produto->setDescricao($descricao);
 
         //tabela marca
         $produto->setNomeMarca($nomeMarca);
 
         //tabela categoria
-        $produto->setTipo($tipo);
+        $produto->setCategoria($categoria);
 
         $produtoDao = new ProdutoDao();
-        $produtoDao->create_prod($produto);
+        $produtoDao->create_prod($produto, $_SESSION['id']);
 
         echo " <script>
                     alert('Produto Cadastrado');

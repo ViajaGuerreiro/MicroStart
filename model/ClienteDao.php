@@ -33,26 +33,34 @@ class ClienteDao
         $cadastrarTel->bindValue(2, $cliente->getTelefone2());
         $cadastrarTel->bindValue(3, $cliente->getDDD2());
         $cadastrarTel->execute();
-    }
 
-    //tabela Endereco
-    public function createEnd(Cliente $cliente){
-        $sql = "INSERT INTO endereco(rua, cidade, uf, pais, bairro, cep) values (?, ?, ?, ?, ?, ?);";
+        //tabela Endereco
 
-        $add = Conexao::getInstance()->prepare($sql);
-        $add -> bindValue(1, $cliente -> getRua());
-        $add -> bindValue(2, $cliente -> getCidade());
-        $add -> bindValue(3, $cliente -> getUF());
-        $add -> bindValue(4, $cliente -> getPais());
-        $add -> bindValue(5, $cliente -> getBairro());
-        $add -> bindValue(6, $cliente -> getCep());
-        $add -> execute();
+        $sql3 = "INSERT INTO endereco(cep) values (?)";
 
+        $cadastrarEnd = Conexao::getInstance()->prepare($sql3);
+
+        $cadastrarEnd -> bindValue(1, $cliente -> getCep());
+        $cadastrarEnd -> execute();
+
+        $idEnd = Conexao::getInstance()->lastInsertId();
+
+        // tabela con_Endereco
+
+        $sql4 = "INSERT INTO con_end(cod_cli, cod_end, num_casa, complemento_casa) values (?,?,?,?)";
+
+        $cadastrarEnd2 = Conexao::getInstance()->prepare($sql4);
+
+        $cadastrarEnd2->bindValue(1, $id);
+        $cadastrarEnd2->bindValue(2, $idEnd);
+        $cadastrarEnd2->bindValue(3, $cliente->getNumero());
+        $cadastrarEnd2->bindValue(4, $cliente->getComplemento());
+        $cadastrarEnd2->execute();
     }
 
     public function read($id)
     {
-        $sql = "SELECT nome AS 'nome_cli', sobrenome AS 'sobrenome_cli', DATE_FORMAT(data_nasc, '%d/%m/%Y') AS 'nascimento_cli', cnpj AS 'cnpj_cli', email AS 'email_cli' FROM cliente WHERE cod_cli = ?";
+        $sql = "SELECT nome AS 'nome_cli', sobrenome AS 'sobrenome_cli', DATE_FORMAT(data_nasc, '%d/%m/%Y') AS 'nascimento_cli', cnpj AS 'cnpj_cli', email AS 'email_cli', plano AS plano_atual FROM cliente WHERE cod_cli = ?";
 
         $lerDados = Conexao::getInstance()->prepare($sql);
         $lerDados->bindValue(1, $id);

@@ -48,7 +48,10 @@ if (isset($_SESSION['id_cli'])) {
                             <a href="">home</a>
                         </li>
                         <li>
-                            <a href="view/cadastrarProduto.php">produto</a>
+                            <a href="view/cadastrarProduto.php">Cadastrar produto</a>
+                        </li>
+                        <li>
+                            <a href="view/produtos.php">Produtos</a>
                         </li>
                         <li>
                             <a href="View/alterarDadosCli.php">Dados</a>

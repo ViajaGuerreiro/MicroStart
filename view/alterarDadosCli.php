@@ -51,6 +51,11 @@
                     <input required type="password" name="senha" id="cxSenha">
                 </div>
 
+                <div id="form-alterar-plano">
+                    <label for="cxPlano">Plano:</label>
+                    <input readonly type="text" name="plano" id="cxPlano" value="<?= $linha['plano_atual'] ?>">
+                </div>
+
                 <button type="submit">Alterar dados</button>
             </form>
         </div>

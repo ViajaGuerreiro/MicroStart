@@ -2,7 +2,7 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    if($nome != "" && $sobrenome != "" && $data_nasc != "" && $cnpj != "" && $email != "" && $senha != "" && $ddd1 != "" && $tel1 != "") {
+    if($nome != "" && $sobrenome != "" && $data_nasc != "" && $cnpj != "" && $email != "" && $senha != "" && $ddd1 != "" && $tel1 != "" && $cep != "" && $numero != "") {
         require_once("../model/Cliente.php");
         require_once("../model/ClienteDao.php");
         
@@ -21,6 +21,14 @@
         $cliente->setTelefone1($tel1);
         $cliente->setDDD2($ddd2);
         $cliente->setTelefone2($tel2);
+
+        //tabela endereco
+        $cliente->setCep($cep);
+
+        // tabela con_endereco
+        $cliente->setNumero($numero);
+        $cliente->setComplemento($complemento);
+
         $clienteDao = new ClienteDao();
 
         if($clienteDao->verificarEmailCnpj($cliente) == 'certo')

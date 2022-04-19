@@ -9,7 +9,7 @@ class Cliente
     public int $complemento_casa;*/
 
 //tabela cliente
-    private $cod, $nome, $sobrenome, $cnpj, $dataNasc, $email, $senha;
+    private $cod, $nome, $sobrenome, $cnpj, $dataNasc, $email, $senha, $plano;
 
     public function getCod() {
         return $this->cod;
@@ -70,6 +70,14 @@ class Cliente
         $this->senha = $senha;
     }
 
+    public function getPlano() {
+        return $this->plano;
+    }
+
+    public function setPlano($plano) {
+        $this->plano = $plano;
+    }
+
      //tabela telefone
      private $telefone1, $ddd1, $telefone2, $ddd2;
 
@@ -107,47 +115,8 @@ class Cliente
 
      // tabela endereço
 
-    private $rua, $cidade, $uf, $pais, $bairro, $cep;
+    private $cep;
 
-    public function setRua($rua){
-        $this -> rua = $rua;
-    }
-
-    public function getRua(){
-        return $this -> rua;
-    }
-
-    public function setCidade($cidade){
-        $this -> cidade = $cidade;
-    }
-
-    public function getCidade(){
-        return $this -> cidade;
-    }
-
-    public function setUF($uf){
-        $this -> uf = $uf;
-    }
-
-    public function getUF(){
-        return $this -> uf;
-    }
-
-    public function setPais($pais){
-        $this -> pais = $pais;
-    }
-
-    public function getPais(){
-        return $this -> pais;
-    }
-
-    public function setBairro($bairro){
-        $this -> bairro = $bairro;
-    }
-
-    public function getBairro(){
-        return $this -> bairro;
-    }
 
     public function setCep($cep){
         $this -> cep = $cep;
@@ -155,6 +124,26 @@ class Cliente
 
     public function getCep(){
         return $this -> cep;
+    }
+
+    //tabela con_endereço
+
+    private $numero, $complemento;
+
+    public function setNumero($numero){
+        $this -> numero = $numero;
+    }
+
+    public function getNumero(){
+        return $this -> numero;
+    }
+
+    public function setComplemento($complemento){
+        $this -> complemento = $complemento;
+    }
+
+    public function getComplemento(){
+        return $this -> complemento;
     }
 
 }

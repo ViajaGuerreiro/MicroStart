@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include_once '../controller/verificaLogin.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +18,14 @@
             <form action="../controller/cadProduto.php" method="post">
                 <div id="form-cadastro-categoria">
                     <label for="cxCategoria">Categoria:</label>
-                    <input required type="text" name="tipo" id="cxCategoria">
+                    <select required type="text" name="categoria" id="cxCategoria">
+                        <option disabled selected>Selecione...</option>
+                        <option value="moda">Moda</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="eletrodomesticos">Eletrodomésticos</option>
+                        <option value="construcao">Construção</option>
+                        <option value="outros">Outros</option>
+                    </select>
                 </div>
 
                 <div id="form-cadastro-marca">
@@ -21,27 +33,43 @@
                     <input required type="text" name="nomeMarca" id="cxMarca">
                 </div>
 
-                <div id="form-cadastro-nomeprod">
-                    <label for="cxNome">Nome do Produto:</label>
-                    <input required type="text" name="nomeprod" id="cxNome">
+                <!-- Lembrete: Arrumar um jeito de inserir imagens -->
+                <div id="form-cadastro-imagem">
+                    <label for="cxImagem">Imagem</label>
+                    <input required type="file" name="imagem" id="cxImagem">
+                </div>
+
+                <div id="form-cadastro-produto">
+                    <label for="cxProduto">Produto:</label>
+                    <input required type="text" name="nomeProduto" id="cxProduto">
                 </div>
 
                 <div id="form-cadastro-preco">
-                    <label for="cxPreco">Preço:</label>
-                    <input required type="text" name="preco" id="cxPreco">
+                    <label for="cxPreco">Preço do Lote: R$</label>
+                    <input required type="number" name="preco" id="cxPreco">
+                </div>
+
+                <div id="form-cadastro-QIL">
+                    <label for="cxQIL">Quantidade de itens do lote:</label>
+                    <input required type="number" name="QIL" id="cxQIL">
                 </div>
 
                 <div id="form-cadastro-tamanho">
-                    <label for="cxTamanho">Tamanho:</label>
+                    <label for="cxTamanho">Tamanho dos itens:</label>
                     <input required type="text" name="tamanho" id="cxTamanho">
                 </div>
 
-                <div id="form-cadastro-quantidade">
-                    <label for="cxQuantidade">Quantidade:</label>
-                    <input required type="text" name="quantidade" id="cxQuantidade">
+                <div id="form-cadastro-disponivel">
+                    <label for="cxDisponivel">Lotes disponiveis:</label>
+                    <input required type="number" name="disponivel" id="cxDisponivel">
                 </div>
 
-                <button type="submit">Cadastrar</button>
+                <div id="form-cadastro-descricao">
+                    <label for="cxDescricao">Descricao:</label>
+                    <input placeholder="detalhe mais sobre o produto" type="text" name="descricao" id="cxDescricao">
+                </div>
+
+                <button type="submit">Cadastrar Produto</button>
             </form>
         </div>
     </main>

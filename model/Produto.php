@@ -1,23 +1,31 @@
 <?php
 
 class Produto{
-    //tabela produto
-    private $nome, $preco, $tamanho, $quantidade;
+    //tabela lote
+    private $produto, $precoLote, $Qil, $tamanho, $lotesDisponiveis, $descricao;
 
-    public function setNomeProd($nomeprod){
-        $this -> nomeprod = $nomeprod;
+    public function setProduto($produto){
+        $this -> produto = $produto;
     }
 
-    public function getNomeProd(){
-        return $this -> nomeprod;
+    public function getProduto(){
+        return $this -> produto;
     }
 
-    public function setPreco($preco){
-        $this -> preco = $preco;
+    public function setPrecoLote($precoLote){
+        $this -> precoLote = $precoLote;
     }
 
-    public function getPreco(){
-        return $this -> preco;
+    public function getPrecoLote(){
+        return $this -> precoLote;
+    }
+
+    public function setQil($Qil){
+        $this -> Qil = $Qil;
+    }
+
+    public function getQil(){
+        return $this -> Qil;
     }
 
     public function setTamanho($tamanho){
@@ -28,12 +36,20 @@ class Produto{
         return $this -> tamanho;
     }
 
-    public function setQuantidade($quantidade){
-        $this -> quantidade = $quantidade;
+    public function setLotesDisponiveis($lotesDisponiveis){
+        $this -> lotesDisponiveis = $lotesDisponiveis;
     }
 
-    public function getQuantidade(){
-        return $this -> quantidade;
+    public function getLotesDisponiveis(){
+        return $this -> lotesDisponiveis;
+    }
+
+    public function setDescricao($descricao){
+        $this -> descricao = $descricao;
+    }
+
+    public function getDescricao(){
+        return $this -> descricao;
     }
 
     //tabela marca
@@ -50,14 +66,14 @@ class Produto{
 
     //tabela categoria
 
-    private $tipo;
+    private $categoria;
 
-    public function setTipo($tipo){
-        $this -> tipo = $tipo;
+    public function setCategoria($categoria){
+        $this -> categoria = $categoria;
     }
 
-    public function getTipo(){
-        return $this -> tipo;
+    public function getCategoria(){
+        return $this -> categoria;
     }
 }
  
