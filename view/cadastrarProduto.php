@@ -17,7 +17,6 @@
         <div id="form-cadastro">
             <form action="../controller/cadProduto.php" method="post">
 
-            <!--
                 <div id="form-cadastro-categoria">
                     <label for="cxCategoria">Categoria:</label>
                     <select required type="text" name="categoria" id="cxCategoria">
@@ -29,7 +28,6 @@
                         <option value="5">Outros</option>
                     </select>
                 </div>
-            -->
 
                 <div id="form-cadastro-marca">
                     <label for="cxMarca">Marca:</label>
