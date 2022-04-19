@@ -33,7 +33,7 @@ cod_con_end int primary key auto_increment
 , cod_end integer
 , num_casa varchar(5) not null
 , complemento_casa varchar(50)
-, constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
+, constraint cod_cli_end foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_end foreign key(cod_end) references endereco(cod_end)
 );
 
@@ -58,17 +58,17 @@ create table lote(
 cod_lote int primary key auto_increment
 , cod_marca integer
 , cod_cli integer 
-, cod_categoria varchar(10) not null
-, produto varchar(30) not null
+, /*cod_categoria varchar(10) not null
+,*/ produto varchar(30) not null
 , preco_lote float(10) not null
 , quantidade_itens_lote int(6) not null
 , tamanho_do_item varchar(20) not null
 , lotes_disponiveis int(6) not null
 , ativo varchar(1) default "S" not null
 , descricao varchar(500)
-, constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
+, constraint cod_cli_lote foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_marca foreign key(cod_marca) references marca(cod_marca)
-, constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
+/*, constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)*/
 );
 
 create table pagamento(
@@ -99,7 +99,7 @@ cod_venda int primary key auto_increment
 , cod_pag integer
 , cod_trans integer
 , data_venda date not null
-, constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
+, constraint cod_cli_venda foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_pag foreign key(cod_pag) references pagamento(cod_pag)
 , constraint cod_trans foreign key(cod_trans) references transportadora(cod_trans)
 );
@@ -110,6 +110,14 @@ cod_item_venda int primary key auto_increment
 , cod_lote integer
 , quantidade_lotes int(6) not null
 , precoTotal float(10) not null
-, constraint cod_venda foreign key(cod_venda) references venda(cod_venda)
+, constraint cod_venda foreign key(cod_venda) references registro_venda(cod_venda)
 , constraint cod_produto foreign key(cod_lote) references lote(cod_lote)
 );
+
+insert into lote (produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, ativo, descricao) values
+('telefone', '1200', '20', '20x30', '30', 'S', 'aaa');
+
+select * from lote;
+
+delete from lote where cod_lote = 3;
+

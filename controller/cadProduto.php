@@ -2,7 +2,9 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
+// && $categoria != ""
+
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" ) {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
         
@@ -19,8 +21,8 @@
         //tabela marca
         $produto->setNomeMarca($nomeMarca);
 
-        //tabela categoria
-        $produto->setCategoria($categoria);
+        //tabela categoria         $produto->setCategoria($categoria);
+
 
         $produtoDao = new ProdutoDao();
         $produtoDao->create_prod($produto, $_SESSION['id']);

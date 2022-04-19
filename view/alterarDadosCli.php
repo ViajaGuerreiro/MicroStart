@@ -15,7 +15,9 @@
 
     $clienteDao = new ClienteDao();
     $linhas = $clienteDao->read($_SESSION['id']);
-    foreach($linhas as $linha) {
+
+
+        foreach($linhas as $linha) {
 
 ?>
         <h1>Alterar dados do Cliente</h1>

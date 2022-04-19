@@ -16,6 +16,8 @@
         <h1>Cadastrar Produto</h1>
         <div id="form-cadastro">
             <form action="../controller/cadProduto.php" method="post">
+
+            <!--
                 <div id="form-cadastro-categoria">
                     <label for="cxCategoria">Categoria:</label>
                     <select required type="text" name="categoria" id="cxCategoria">
@@ -27,17 +29,18 @@
                         <option value="outros">Outros</option>
                     </select>
                 </div>
+            -->
 
                 <div id="form-cadastro-marca">
                     <label for="cxMarca">Marca:</label>
                     <input required type="text" name="nomeMarca" id="cxMarca">
                 </div>
 
-                <!-- Lembrete: Arrumar um jeito de inserir imagens -->
+                <!-- Lembrete: Arrumar um jeito de inserir imagens 
                 <div id="form-cadastro-imagem">
                     <label for="cxImagem">Imagem</label>
                     <input required type="file" name="imagem" id="cxImagem">
-                </div>
+                </div> -->
 
                 <div id="form-cadastro-produto">
                     <label for="cxProduto">Produto:</label>

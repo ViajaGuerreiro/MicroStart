@@ -17,13 +17,13 @@ public function create_prod(Produto $produto, $id){
 
     $idMarca = Conexao::getInstance()->lastInsertId();
 
-    //tabela produto
+    //tabela produto  cod_categoria,      $inserir->bindValue(2, $produto->getCategoria());
 
-    $sql2 = "INSERT INTO lote(cod_marca, cod_categoria, cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao, imagem) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql2 = "INSERT INTO lote(cod_marca,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values (?, ?, ?, ?, ?, ?, ?, ?)";
 
     $inserir = Conexao::getInstance()->prepare($sql2);
     $inserir->bindValue(1, $idMarca);
-    $inserir->bindValue(2, $produto->getCategoria());
+
     $inserir->bindValue(3, $id);
     $inserir->bindValue(4, $produto->getProduto());
     $inserir->bindValue(5, $produto->getPrecoLote());
@@ -56,7 +56,7 @@ public function read_prod()
 
 public function read_prod_id($id)
 {
-    $sql = "SELECT nome as 'Nome do Produto', preco as 'Preco', tamanho as 'Tamanho', quantidade as 'Quantidade' FROM produto WHERE cod_prod = ?";
+    $sql = "SELECT produto as 'Nome do Produto', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade', descricao as 'Descrição' FROM lote WHERE cod_lote = ?";
 
     $lerInfoProd = Conexao::getInstance()->prepare($sql);
     $lerInfoProd-> bindValue(1, $id);
@@ -72,5 +72,33 @@ public function read_prod_id($id)
             return NULL;
         }
     }
+
+
+public function delete_prod($id)
+{
+    $sql = "DELETE FROM lote WHERE cod_lote = ?";
+    
+    $deletarprod = Conexao::getInstance()->prepare($sql);
+    $deletarprod->bindValue(1, $id);
+
+    $deletarprod->execute();
+}
+
+public function update_prod(Produto $produto)
+    {
+        $sql ="UPDATE produto SET produto = ?, preco_lote = ?, quantidade_itens_lote = ?, tamanho_do_item = ?, lotes_disponiveis = ?, ativo = ?, descricao = ? WHERE cod_lote = ? ";
+
+        $alterar = Conexao::getInstance()->prepare($sql);
+        $alterar->bindValue(1, $produto->getProduto());
+        $alterar->bindValue(2, $produto->getPrecoLote());
+        $alterar->bindValue(3, $produto->getQil());
+        $alterar->bindValue(4, $produto->getTamanho());
+        $alterar->bindValue(5, $produto->getLotesDisponiveis());
+        $alterar->bindValue(6, $produto->getDescricao());
+
+        $alterar->execute();
+
+    }
+
 }
 ?>
