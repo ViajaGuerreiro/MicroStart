@@ -56,10 +56,10 @@ insert into categoria(tipo) values
 
 create table lote(
 cod_lote int primary key auto_increment
-, cod_marca integer
-, cod_cli integer 
-, /*cod_categoria varchar(10) not null
-,*/ produto varchar(30) not null
+, cod_marca integer not null
+, cod_cli integer not null
+, cod_categoria integer not null
+, produto varchar(30) not null
 , preco_lote float(10) not null
 , quantidade_itens_lote int(6) not null
 , tamanho_do_item varchar(20) not null
@@ -68,7 +68,7 @@ cod_lote int primary key auto_increment
 , descricao varchar(500)
 , constraint cod_cli_lote foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_marca foreign key(cod_marca) references marca(cod_marca)
-/*, constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)*/
+, constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
 );
 
 create table pagamento(
