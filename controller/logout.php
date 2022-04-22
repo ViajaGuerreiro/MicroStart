@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+include_once 'verificaLogin.php';
 session_destroy();
 
 echo " <script>

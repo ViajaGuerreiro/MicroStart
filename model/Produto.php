@@ -2,7 +2,15 @@
 
 class Produto{
     //tabela lote
-    private $produto, $precoLote, $Qil, $tamanho, $lotesDisponiveis, $descricao;
+    private $idProd, $produto, $precoLote, $Qil, $tamanho, $lotesDisponiveis, $descricao;
+
+    public function setIdProd($idProd){
+        $this -> idProd = $idProd;
+    }
+
+    public function getIdProd(){
+        return $this -> idProd;
+    }
 
     public function setProduto($produto){
         $this -> produto = $produto;

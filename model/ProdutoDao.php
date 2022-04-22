@@ -61,7 +61,7 @@ public function read_prod()
 
 public function read_prod_id($id)
 {
-    $sql = "SELECT produto as 'Nome do Produto', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade', descricao as 'Descrição' FROM lote WHERE cod_lote = ?";
+    $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao' FROM lote WHERE cod_cli = ?";
 
     $lerInfoProd = Conexao::getInstance()->prepare($sql);
     $lerInfoProd-> bindValue(1, $id);
@@ -79,19 +79,19 @@ public function read_prod_id($id)
     }
 
 
-public function delete_prod($id)
+public function delete_prod(Produto $produto)
 {
     $sql = "DELETE FROM lote WHERE cod_lote = ?";
     
     $deletarprod = Conexao::getInstance()->prepare($sql);
-    $deletarprod->bindValue(1, $id);
+    $deletarprod->bindValue(1, $produto->getIdProd());
 
     $deletarprod->execute();
 }
 
 public function update_prod(Produto $produto)
     {
-        $sql ="UPDATE lote SET produto = ?, preco_lote = ?, quantidade_itens_lote = ?, tamanho_do_item = ?, lotes_disponiveis = ?, ativo = ?, descricao = ? WHERE cod_lote = ? ";
+        $sql ="UPDATE lote SET produto = ?, preco_lote = ?, quantidade_itens_lote = ?, tamanho_do_item = ?, lotes_disponiveis = ?, descricao = ? WHERE cod_lote = ? ";
 
         $alterar = Conexao::getInstance()->prepare($sql);
         $alterar->bindValue(1, $produto->getProduto());
@@ -100,6 +100,7 @@ public function update_prod(Produto $produto)
         $alterar->bindValue(4, $produto->getTamanho());
         $alterar->bindValue(5, $produto->getLotesDisponiveis());
         $alterar->bindValue(6, $produto->getDescricao());
+        $alterar->bindValue(7, $produto->getIdProd());
 
         $alterar->execute();
 
