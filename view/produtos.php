@@ -30,12 +30,13 @@
 
         foreach($linhas as $linha) {
 ?>
-            <a href="">
+            <form action="carrinho.php?id=<?= $linha['cod_lote'] ?>" method="GET">
                 <div>
                     <img src="img/produtos/teste.jpg" alt="">
                     <input readonly type="text" value="<?= $linha['produto']?>" id="cxProduto">
+                    <button>Comprar</button>
                 </div>
-            </a>
+            </form>
 <?php
         }
 ?>

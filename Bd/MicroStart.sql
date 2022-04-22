@@ -77,9 +77,7 @@ cod_pag int primary key auto_increment
 );
 
 insert into pagamento(tipo) values
- ("pix"),
- ("boleto"),
- ("cartao_de_credito");
+ ("mercado_pago");
 
 create table transportadora(
 cod_trans int primary key auto_increment
@@ -96,22 +94,18 @@ insert into transportadora(nome) values
 create table registro_venda(
 cod_venda int primary key auto_increment
 , cod_cli integer
-, cod_pag integer
+, cod_pag integer default 1
 , cod_trans integer
-, data_venda date not null
-, constraint cod_cli_venda foreign key(cod_cli) references cliente(cod_cli)
+, cod_lote integer
+, quantidade_lotes int
+, data_hora_venda date not null
+, ref int not null
+, preco float(10,2) not null
+, status_pag varchar(12) not null
+, constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_pag foreign key(cod_pag) references pagamento(cod_pag)
 , constraint cod_trans foreign key(cod_trans) references transportadora(cod_trans)
-);
-
-create table item_venda(
-cod_item_venda int primary key auto_increment
-, cod_venda integer
-, cod_lote integer
-, quantidade_lotes int(6) not null
-, precoTotal float(10) not null
-, constraint cod_venda foreign key(cod_venda) references registro_venda(cod_venda)
-, constraint cod_produto foreign key(cod_lote) references lote(cod_lote)
+, constraint cod_lote foreign key(cod_lote) references lote(cod_lote)
 );
 
 
