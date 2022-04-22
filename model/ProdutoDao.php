@@ -1,7 +1,7 @@
 <?php
 require_once 'conexao.php';
 require_once 'Cliente.php';
-
+require_once 'Produto.php';
 
 class ProdutoDao{
 
@@ -17,12 +17,18 @@ public function create_prod(Produto $produto, $id){
 
     $idMarca = Conexao::getInstance()->lastInsertId();
 
-    //tabela produto  cod_categoria,      $inserir->bindValue(2, $produto->getCategoria());
+    //tabela categoria  
 
-    $sql2 = "INSERT INTO lote(cod_marca,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    $categoria = $_POST["categoria"];
+
+
+    //tabela produto
+
+    $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values ( ?,?,?, ?, ?, ?, ?, ?, ?)";
 
     $inserir = Conexao::getInstance()->prepare($sql2);
     $inserir->bindValue(1, $idMarca);
+    $inserir->bindValue(2, $categoria);
 
     $inserir->bindValue(3, $id);
     $inserir->bindValue(4, $produto->getProduto());
@@ -40,8 +46,7 @@ public function read_prod()
     $sql = "SELECT * FROM lote";
 
     $lerInfoProd = Conexao::getInstance()->prepare($sql);
-
-    $lerInfoProd->execute();
+    $lerInfoProd -> execute();
 
     if($lerInfoProd->rowCount() > 0)
         {
@@ -86,7 +91,7 @@ public function delete_prod($id)
 
 public function update_prod(Produto $produto)
     {
-        $sql ="UPDATE produto SET produto = ?, preco_lote = ?, quantidade_itens_lote = ?, tamanho_do_item = ?, lotes_disponiveis = ?, ativo = ?, descricao = ? WHERE cod_lote = ? ";
+        $sql ="UPDATE lote SET produto = ?, preco_lote = ?, quantidade_itens_lote = ?, tamanho_do_item = ?, lotes_disponiveis = ?, ativo = ?, descricao = ? WHERE cod_lote = ? ";
 
         $alterar = Conexao::getInstance()->prepare($sql);
         $alterar->bindValue(1, $produto->getProduto());

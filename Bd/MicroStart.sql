@@ -44,7 +44,7 @@ cod_marca int primary key auto_increment
 
 create table categoria(
 cod_categoria int primary key auto_increment
-, tipo varchar(20) not null
+, tipo varchar(20) 
 );
 
 insert into categoria(tipo) values
@@ -114,10 +114,4 @@ cod_item_venda int primary key auto_increment
 , constraint cod_produto foreign key(cod_lote) references lote(cod_lote)
 );
 
-insert into lote (produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, ativo, descricao) values
-('telefone', '1200', '20', '20x30', '30', 'S', 'aaa');
-
-select * from lote;
-
-delete from lote where cod_lote = 3;
 

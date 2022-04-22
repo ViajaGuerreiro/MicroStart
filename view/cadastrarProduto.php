@@ -70,7 +70,7 @@
                     <input placeholder="detalhe mais sobre o produto" type="text" name="descricao" id="cxDescricao">
                 </div>
 
-                <button type="submit">Cadastrar Produto</button>
+                <button type="submit" method="post">Cadastrar Produto</button>
             </form>
         </div>
     </main>

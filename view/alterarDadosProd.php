@@ -10,7 +10,6 @@
     <main>
 <?php
     session_start();
-    require_once '../model/Produto.php';
     require_once '../model/ProdutoDao.php';
 
     $produtoDao = new ProdutoDao();

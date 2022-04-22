@@ -4,7 +4,7 @@
 
 // && $categoria != ""
 
-    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" ) {
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
         
@@ -21,7 +21,8 @@
         //tabela marca
         $produto->setNomeMarca($nomeMarca);
 
-        //tabela categoria         $produto->setCategoria($categoria);
+        //tabela categoria        
+         $produto->setCategoria($categoria);
 
 
         $produtoDao = new ProdutoDao();

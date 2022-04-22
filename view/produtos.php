@@ -34,6 +34,7 @@
                 <div>
                     <img src="img/produtos/teste.jpg" alt="">
                     <input readonly type="text" value="<?= $linha['produto']?>" id="cxProduto">
+                    <a href="alterarDadosProd.php" type="submit" >Alterar</a>
                 </div>
             </a>
 <?php
