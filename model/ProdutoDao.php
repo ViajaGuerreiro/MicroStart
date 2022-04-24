@@ -43,7 +43,7 @@ public function create_prod(Produto $produto, $id){
 
 public function read_prod()
 {
-    $sql = "SELECT * FROM lote";
+    $sql = "SELECT * FROM lote WHERE quantidade_itens_lote > 0";
 
     $lerInfoProd = Conexao::getInstance()->prepare($sql);
     $lerInfoProd -> execute();
