@@ -108,4 +108,27 @@ cod_venda int primary key auto_increment
 , constraint cod_lote foreign key(cod_lote) references lote(cod_lote)
 );
 
+DELIMITER $
+	CREATE TRIGGER tr_registroVenda AFTER INSERT
+    ON registro_venda
+    FOR EACH ROW
+    BEGIN
+		UPDATE lote SET lotes_disponiveis = lotes_disponiveis - new.quantidade_lotes
+        WHERE cod_lote = new.cod_lote;
+        SET @lotes_disponiveis := (select lotes_disponiveis from lote);
+        IF (@lotes_disponiveis <= 0) THEN
+			UPDATE lote SET ativo = 'N' WHERE cod_lote = new.cod_lote;
+		ELSE
+            UPDATE lote SET ativo = 'S' WHERE cod_lote = new.cod_lote;
+		END IF;
+	END
+$
+
+-- LEMBRETE: TESTE(APAGAR DEPOIS) --------------------------------------------------
+INSERT INTO registro_venda(cod_cli, cod_trans, cod_lote, quantidade_lotes, data_hora_venda, ref, preco, status_pag)
+values (1, 1, 1, 50, '2022/05/01', 111, 50.0, 'pendente');
+
+SELECT * FROM LOTE;
+SELECT * FROM REGISTRO_VENDA;
+-- ---------------------------------------------------------------------------------
 

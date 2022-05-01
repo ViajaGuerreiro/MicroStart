@@ -78,6 +78,25 @@ public function read_prod_id($id)
         }
     }
 
+    public function read_prod_nome($nome)
+    {
+        $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao' FROM lote WHERE produto = ?";
+    
+        $lerInfoProd = Conexao::getInstance()->prepare($sql);
+        $lerInfoProd-> bindValue(1, $nome);
+        $lerInfoProd->execute();
+    
+        if($lerInfoProd->rowCount() > 0)
+            {
+                $res = $lerInfoProd->fetchAll(PDO::FETCH_ASSOC);
+                return $res;
+            }
+        else
+            {
+                return NULL;
+            }
+        }
+
 
 public function delete_prod(Produto $produto)
 {
