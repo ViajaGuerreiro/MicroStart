@@ -35,12 +35,12 @@
                 <input readonly type="text" value="<?= $linha['Tamanho'] ?>" id="cxTamanhos">
 
                 <label for="cxDisponivel">Disponiveis</label>
-                <input readonly type="number" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
+                <input type="number" maxlengh="<?= $linha['Disponivel'] ?>" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
 
                 <label for="cxDescricao">Descrição</label>
                 <input readonly type="text" value="<?= $linha['Descricao'] ?>" id="cxDescricao">
 
-                <button>Adicionar no carrinho</button>
+                <button>Comprar</button>
         </form>
     </div>
 <?php
