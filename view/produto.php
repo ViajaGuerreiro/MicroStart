@@ -35,7 +35,7 @@
                 <input readonly type="text" value="<?= $linha['Tamanho'] ?>" id="cxTamanhos">
 
                 <label for="cxDisponivel">Disponiveis</label>
-                <input type="number" maxlengh="<?= $linha['Disponivel'] ?>" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
+                <input readonly type="number" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
 
                 <label for="cxDescricao">Descrição</label>
                 <input readonly type="text" value="<?= $linha['Descricao'] ?>" id="cxDescricao">
