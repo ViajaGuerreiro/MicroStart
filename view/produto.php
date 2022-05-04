@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include_once '../controller/verificaLogin.php'; 
     include_once '../model/ProdutoDao.php';
     $nomeProduto = $_GET['nome'];
 ?>
@@ -39,8 +38,18 @@
 
                 <label for="cxDescricao">Descrição</label>
                 <input readonly type="text" value="<?= $linha['Descricao'] ?>" id="cxDescricao">
+<?php
+                if(isset($_SESSION['id'])) {
+?>
 
-                <button>Comprar</button>
+                    <button>Comprar</button>
+<?php
+                }else {
+?>
+                    <a href="loginCli.php">Faça login</a>
+<?php
+                }
+?>
         </form>
     </div>
 <?php
