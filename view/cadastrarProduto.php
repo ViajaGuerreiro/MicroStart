@@ -9,17 +9,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Cadastrar Produto</title>
 </head>
 <body>
     <main>
-        <h1>Cadastrar Produto</h1>
-        <div id="form-cadastro">
-            <form action="../controller/cadProduto.php" method="post">
-
-                <div id="form-cadastro-categoria">
-                    <label for="cxCategoria">Categoria:</label>
-                    <select required type="text" name="categoria" id="cxCategoria">
+      <div class="card col-md-6" style=" padding:30px; margin-top: 30px; margin-left: 350px;">
+        <h1 style="text-align: center;">Cadastrar Produto</h1>
+            <form action="../controller/cadProduto.php" method="post" class="row g-3">
+                <div id="form-cadastro-categoria" class="col-md-6">
+                    <label for="cxCategoria" class="form-label">Categoria:</label>
+                    <select required type="text" class="form-control" name="categoria" id="cxCategoria">
                         <option disabled selected>Selecione...</option>
                         <option value="1">Moda</option>
                         <option value="2">Tecnologia</option>
@@ -29,50 +30,57 @@
                     </select>
                 </div>
 
-                <div id="form-cadastro-marca">
-                    <label for="cxMarca">Marca:</label>
-                    <input required type="text" name="nomeMarca" id="cxMarca">
+                <div id="form-cadastro-marca" class="col-md-6">
+                    <label for="cxMarca" class="form-label">Marca:</label>
+                    <input required type="text" class="form-control" name="nomeMarca" id="cxMarca">
                 </div>
 
-                <!-- Lembrete: Arrumar um jeito de inserir imagens 
-                <div id="form-cadastro-imagem">
-                    <label for="cxImagem">Imagem</label>
-                    <input required type="file" name="imagem" id="cxImagem">
-                </div> -->
 
-                <div id="form-cadastro-produto">
-                    <label for="cxProduto">Produto:</label>
-                    <input required type="text" name="nomeProduto" id="cxProduto">
+                <div id="form-cadastro-produto" class="col-md-6">
+                    <label for="cxProduto" class="form-label">Produto:</label>
+                    <input required type="text" class="form-control" name="nomeProduto" id="cxProduto">
                 </div>
 
-                <div id="form-cadastro-preco">
-                    <label for="cxPreco">Preço do Lote: R$</label>
-                    <input required type="number" name="preco" id="cxPreco">
+              <div id="form-cadastro-preco" class="col-md-6">
+                <label for="cxPreco" class="form-label">Preço do Lote: </label>
+                <div  class=" input-group" style="max-width: 400px;">
+                    <span class="input-group-text"> R$</span>
+                    <input required type="number" class="form-control" name="preco" id="cxPreco">
+                </div>
+              </div>
+
+                <div id="form-cadastro-QIL" class="col-md-6">
+                    <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
+                    <input required type="number" class="form-control" name="QIL" id="cxQIL">
                 </div>
 
-                <div id="form-cadastro-QIL">
-                    <label for="cxQIL">Quantidade de itens do lote:</label>
-                    <input required type="number" name="QIL" id="cxQIL">
+                <div id="form-cadastro-tamanho" class="col-md-6">
+                    <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
+                    <input required type="text" class="form-control" name="tamanho" id="cxTamanho">
                 </div>
 
-                <div id="form-cadastro-tamanho">
-                    <label for="cxTamanho">Tamanho dos itens:</label>
-                    <input required type="text" name="tamanho" id="cxTamanho">
+                <div id="form-cadastro-descricao" class="col-md-6">
+                    <label for="cxDescricao" class="form-label" maxlengt="280">Descrição:</label>
+                    <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" id="cxDescricao">
                 </div>
 
-                <div id="form-cadastro-disponivel">
-                    <label for="cxDisponivel">Lotes disponiveis:</label>
-                    <input required type="number" name="disponivel" id="cxDisponivel">
-                </div>
+                
+                <div id="form-cadastro-disponivel" class="col-md-6">
+                  <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
+                  <input required type="number"class="form-control" name="disponivel" id="cxDisponivel">
+              </div>
+              <div id="form-cadastro-imagem" class="col-md-6">
+                <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
+                <input type="file" id="myFile" name="filename">
+              </div>
 
-                <div id="form-cadastro-descricao">
-                    <label for="cxDescricao">Descricao:</label>
-                    <input placeholder="detalhe mais sobre o produto" type="text" name="descricao" id="cxDescricao">
-                </div>
 
-                <button type="submit" method="post">Cadastrar Produto</button>
+               <a href="listaprodutos.html"> <button type="submit" class="btn btn-outline-primary btn-lg" style="float: right;" method="post">Cadastrar Produto</button> </a>
             </form>
-        </div>
+          </div>
     </main>
 </body>
 </html>
+
+
+ 
