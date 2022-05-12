@@ -4,7 +4,9 @@
 
     require_once 'pagamento/vendor/autoload.php';
 
-    $access_token = "TEST-336808391421665-050115-1d09e6df4b75ae1cbf1bb87865853ec4-204972934";
+    
+
+    $access_token = "";
 
     MercadoPago\SDK::setAccessToken($access_token);
 
