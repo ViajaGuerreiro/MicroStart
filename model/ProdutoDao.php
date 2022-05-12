@@ -1,7 +1,7 @@
 <?php
 require_once 'conexao.php';
 require_once 'Cliente.php';
-require_once 'Produto.php';
+//Codigo tá doido: require_once 'Produto.php';
 
 class ProdutoDao{
 

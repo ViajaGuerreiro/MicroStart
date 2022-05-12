@@ -20,12 +20,12 @@
     foreach($linhas as $linha) {
 ?>
         <div id="detalhesProd">
-            <form action="" method="post">
+            <form action="../controller/pagamento.php" method="post">
                 <img src="" alt="">
-                <input readonly type="text" value="<?= $linha['Nome do Produto']?>" id="cxProduto">
+                <input name="nomeProduto" readonly type="text" value="<?= $linha['Nome do Produto']?>" id="cxProduto">
 
                 <label for="cxPreco">Preço do lote</label>
-                R$<input readonly type="number" value="<?= $linha['Preco']?>" id="cxPreco">
+                R$<input name="precoLote" readonly type="number" value="<?= $linha['Preco']?>" id="cxPreco">
 
                 <label for="cxQuantidade">Quantidade de itens por lote</label>
                 <input readonly type="number" value="<?= $linha['Quantidade'] ?>" id="cxQuantidade">
@@ -35,6 +35,10 @@
 
                 <label for="cxDisponivel">Disponiveis</label>
                 <input readonly type="number" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
+
+                <label for="cxDisponivel">Escolha quantos lotes deseja</label>
+                <input required max="<?= $linha['Disponivel'] ?>" type="number" name="quantidadeComprar" id="cxDisponivel">
+                
 
                 <label for="cxDescricao">Descrição</label>
                 <input readonly type="text" value="<?= $linha['Descricao'] ?>" id="cxDescricao">
