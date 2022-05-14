@@ -6,7 +6,7 @@
 
     
 
-    $access_token = "";
+    $access_token = "TESSSTT-336808391421665-050115-1d09e6df4b75ae1cbf1bb87865853ec4-204972934";
 
     MercadoPago\SDK::setAccessToken($access_token);
 
@@ -23,9 +23,9 @@
     $prefences->items = array($produto);
 
     $prefences->back_urls = array (
-        "success" => '../View/pagSucesso.php',
-        "failure" => '../View/pagFalha.php',
-        "pending" => '../View/pagPendente.php'
+        "success" => 'localhost/microstart/View/pagSucesso.php',
+        "failure" => 'localhost/microstart/View/pagFalha.php',
+        "pending" => 'localhost/microstart/View/pagPendente.php'
     );
 
     $prefences->notification_url = '../View/notificacao.php';
