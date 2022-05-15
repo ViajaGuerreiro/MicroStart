@@ -73,6 +73,23 @@
                 <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
                 <input type="file" id="myFile" name="filename">
               </div>
+                 <div id="img-container">
+            <img id="preview" src="" style="justify-content:center;">
+        </div>
+
+        <script>
+            function readImage() {
+    if (this.files && this.files[0]) {
+        var file = new FileReader();
+        file.onload = function(e) {
+            document.getElementById("preview").src = e.target.result;
+        };       
+        file.readAsDataURL(this.files[0]);
+    }
+}
+
+document.getElementById("img-input").addEventListener("change", readImage, false);
+        </script>
 
 
                <a href="listaprodutos.html"> <button type="submit" class="btn btn-outline-primary btn-lg" style="float: right;" method="post">Cadastrar Produto</button> </a>
