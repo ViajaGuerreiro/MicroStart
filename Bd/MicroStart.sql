@@ -102,7 +102,7 @@ cod_venda int primary key auto_increment
 , ref int not null
 , preco float(10,2) not null
 , status_pag varchar(12) not null
-, constraint cod_cli foreign key(cod_cli) references cliente(cod_cli)
+, constraint cod_cli_venda foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_pag foreign key(cod_pag) references pagamento(cod_pag)
 , constraint cod_trans foreign key(cod_trans) references transportadora(cod_trans)
 , constraint cod_lote foreign key(cod_lote) references lote(cod_lote)
