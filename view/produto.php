@@ -2,6 +2,10 @@
     session_start();
     include_once '../model/ProdutoDao.php';
     $nomeProduto = $_GET['nome'];
+    if($nomeProduto == null)
+    {
+        header('location: produtos.php');
+    }
 ?>
 
 <!DOCTYPE html>
