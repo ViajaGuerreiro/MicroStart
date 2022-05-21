@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Falha no pagamento</h1>
+    <script>
+        var link = "produto.php"
+        alert('Erro no pagamento redirecionando para a pagina de compras')
+        window.location.href = link;
+    </script>
 </body>
 </html>
