@@ -83,6 +83,46 @@ class Produto{
     public function getCategoria(){
         return $this -> categoria;
     }
+
+    //tabela transportadora
+
+    private $codTrans;
+
+    public function setIdTrans($codTrans){
+        $this -> codTrans = $codTrans;
+    }
+
+    public function getIdTrans(){
+        return $this -> codTrans;
+    }
+
+    //tabela registro
+
+    private $qtdComprar,$ref, $statusPag;
+
+    public function setQtdComprar($qtdComprar){
+        $this -> qtdComprar = $qtdComprar;
+    }
+
+    public function getQtdComprar(){
+        return $this -> qtdComprar;
+    }
+
+    public function setRef($ref){
+        $this -> ref = $ref;
+    }
+
+    public function getRef(){
+        return $this -> ref;
+    }
+
+    public function setStatusPag($statusPag){
+        $this -> statusPag = $statusPag;
+    }
+
+    public function getStatusPag(){
+        return $this -> statusPag;
+    }
 }
  
  ?>

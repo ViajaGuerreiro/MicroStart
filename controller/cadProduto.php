@@ -2,8 +2,6 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-// && $categoria != ""
-
     if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");

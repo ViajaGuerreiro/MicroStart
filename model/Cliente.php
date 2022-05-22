@@ -3,11 +3,6 @@
 class Cliente
 {
 
-/*
-//tabela conexão do endereço
-    public int $num_casa;
-    public int $complemento_casa;*/
-
 //tabela cliente
     private $cod, $nome, $sobrenome, $cnpj, $dataNasc, $email, $senha, $plano;
 
@@ -145,5 +140,6 @@ class Cliente
     public function getComplemento(){
         return $this -> complemento;
     }
+
 
 }

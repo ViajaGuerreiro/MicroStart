@@ -1,38 +1,58 @@
 <?php
-    session_start();
-    extract($_REQUEST, EXTR_OVERWRITE);
+session_start();
+extract($_REQUEST, EXTR_OVERWRITE);
 
-    require_once 'pagamento/vendor/autoload.php';
+require_once 'pagamento/vendor/autoload.php';
 
-    
 
-    $access_token = "TESSSTT-336808391421665-050115-1d09e6df4b75ae1cbf1bb87865853ec4-204972934";
+if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoEnvio != "" && $idProduto != "") {
+
+    require_once "../model/Produto.php";
+    require_once "../model/ProdutoDao.php";
+
+    $access_token = "TEST-2311180941663868-052216-e6d12bd3555c35b60a50e555c8184c8d-1128372940";
 
     MercadoPago\SDK::setAccessToken($access_token);
 
     $prefences = new MercadoPago\Preference();
 
-    $produto = new MercadoPago\Item();
+    $produtoCom = new MercadoPago\Item();
 
-    $produto->title = $nomeProduto;
+    $produtoCom->title = $nomeProduto;
 
-    $produto->quantity = $quantidadeComprar;
+    $produtoCom->quantity = $quantidadeComprar;
 
-    $produto->unit_price = (double)$precoLote;
+    $produtoCom->unit_price = (float)$precoLote;
 
-    $prefences->items = array($produto);
+    $prefences->items = array($produtoCom);
 
-    $prefences->back_urls = array (
+    $prefences->back_urls = array(
         "success" => 'localhost/microstart/View/pagSucesso.php',
         "failure" => 'localhost/microstart/View/pagFalha.php',
         "pending" => 'localhost/microstart/View/pagPendente.php'
     );
 
-    $prefences->notification_url = '../View/notificacao.php';
-    $prefences->external_reference = 4545;
+    $prefences->notification_url = 'localhost/microstart/View/notificacao.php';
+
+    $ref = rand(1, 9999);
+
+    $prefences->external_reference = $ref;
     $prefences->save();
 
-    $link = $prefences->init_point;
+    $link = $prefences->sandbox_init_point;
+    
+    $produto = new Produto();
 
-    echo $link;
+    $produto->setIdTrans($tipoEnvio);
+    $produto->setIdProd($idProduto);
+    $produto->setQtdComprar($quantidadeComprar);
+    $produto->setRef($ref);
+    $produto->setPrecoLote($precoLote);
+    $produto->setStatusPag('pendente');
 
+    $comprar = new ProdutoDao();
+
+    $comprar->comprarProd($_SESSION['id'],$produto);
+
+    header('Location: ' . $link);
+}
