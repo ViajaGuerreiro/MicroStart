@@ -123,12 +123,3 @@ DELIMITER $
 		END IF;
 	END
 $
-
--- LEMBRETE: TESTE(APAGAR DEPOIS) --------------------------------------------------
-INSERT INTO registro_venda(cod_cli, cod_trans, cod_lote, quantidade_lotes, data_hora_venda, ref, preco, status_pag)
-values (1, 1, 1, 50, '2022/05/01', 111, 50.0, 'pendente');
-
-SELECT * FROM LOTE;
-SELECT * FROM REGISTRO_VENDA;
--- ---------------------------------------------------------------------------------
-
