@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+Include_once '../controller/verificaLogado.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
