@@ -3,12 +3,38 @@ session_start();
 extract($_REQUEST, EXTR_OVERWRITE);
 
 require_once 'pagamento/vendor/autoload.php';
+require_once '../model/ClienteDao.php';
+require_once "../model/Produto.php";
+require_once "../model/ProdutoDao.php";
+
+$produto = new Produto();
+$comprar = new ProdutoDao();
+$cliente = new ClienteDao();
+
+$linhas = $cliente->read($_SESSION['id']);
+
+foreach($linhas as $linha)
+{
+    if($linha['plano_atual'] == "G")
+    {
+        $taxa = 0.14;
+        $frete = 50;
+        if($tipoEnvio == 4)
+        {
+            $frete = 0;
+        }
+    }
+    elseif($linha['plano_atual'] == "P")
+    {
+        $taxa = 0.07;
+        $frete = 0;
+    }
+}
 
 
 if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoEnvio != "" && $idProduto != "") {
 
-    require_once "../model/Produto.php";
-    require_once "../model/ProdutoDao.php";
+    
 
     $access_token = "TEST-2311180941663868-052216-e6d12bd3555c35b60a50e555c8184c8d-1128372940";
 
@@ -22,7 +48,7 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
 
     $produtoCom->quantity = $quantidadeComprar;
 
-    $produtoCom->unit_price = (float)$precoLote;
+    $produtoCom->unit_price = (float)$precoLote + ($precoLote * $taxa) + $frete;
 
     $prefences->items = array($produtoCom);
 
@@ -40,8 +66,6 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
     $prefences->save();
 
     $link = $prefences->sandbox_init_point;
-    
-    $produto = new Produto();
 
     $produto->setIdTrans($tipoEnvio);
     $produto->setIdProd($idProduto);
@@ -49,8 +73,6 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
     $produto->setRef($ref);
     $produto->setPrecoLote($precoLote);
     $produto->setStatusPag('pendente');
-
-    $comprar = new ProdutoDao();
 
     $comprar->comprarProd($_SESSION['id'],$produto);
 

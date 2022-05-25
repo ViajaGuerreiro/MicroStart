@@ -60,7 +60,7 @@ class ClienteDao
 
     public function read($id)
     {
-        $sql = "SELECT nome AS 'nome_cli', sobrenome AS 'sobrenome_cli', DATE_FORMAT(data_nasc, '%d/%m/%Y') AS 'nascimento_cli', cnpj AS 'cnpj_cli', email AS 'email_cli', plano AS plano_atual FROM cliente WHERE cod_cli = ?";
+        $sql = "SELECT nome AS 'nome_cli', sobrenome AS 'sobrenome_cli', DATE_FORMAT(data_nasc, '%d/%m/%Y') AS 'nascimento_cli', cnpj AS 'cnpj_cli', email AS 'email_cli', plano AS 'plano_atual' FROM cliente WHERE cod_cli = ?";
 
         $lerDados = Conexao::getInstance()->prepare($sql);
         $lerDados->bindValue(1, $id);

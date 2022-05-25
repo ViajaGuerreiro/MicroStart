@@ -68,8 +68,9 @@
             </div>
         <?php
         }
-        foreach ($linhasProd as $linhaProd) {
-
+        if(!$linhasProd == null) {
+            foreach ($linhasProd as $linhaProd) {
+            
         ?>
             <h1>Alterar dados do Produto</h1>
             <div id="form-alterar">
@@ -115,4 +116,9 @@
 
 </html>
 <?php
+        }
+    }
+    else
+        {
+            echo("<h2>Nenhum Produto cadastrado </h2>");
         }

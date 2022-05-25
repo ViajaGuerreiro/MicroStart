@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once '../model/ProdutoDao.php';
+    include_once "../model/ClienteDao.php";
     $nomeProduto = $_GET['nome'];
     if($nomeProduto == null)
     {
@@ -19,6 +20,21 @@
 <body>
 
 <?php
+    $clienteDao = new ClienteDao();
+    $linhasCli = $clienteDao->read($_SESSION['id']);
+    foreach($linhasCli as $linhaCli)
+    {
+        if($linhaCli['plano_atual'] == "G")
+        {
+            $taxa = "14%";
+            $frete = "Frete R$50";
+        }
+        elseif($linhaCli['plano_atual'] == "P")
+        {
+            $taxa = "7%";
+            $frete = "Frete Gratis";
+        }
+    }
     $produtoDao = new ProdutoDao();
     $linhas = $produtoDao->read_prod_nome($nomeProduto);
     foreach($linhas as $linha) {
@@ -33,6 +49,8 @@
 
                 <label for="cxPreco">Preço do lote</label>
                 R$<input name="precoLote" readonly type="number" value="<?= $linha['Preco']?>" id="cxPreco">
+
+                <label for="cxTaxa">Taxa adicional de <?= $taxa ?></label>
 
                 <label for="cxQuantidade">Quantidade de itens por lote</label>
                 <input readonly type="number" value="<?= $linha['Quantidade'] ?>" id="cxQuantidade">
@@ -55,9 +73,9 @@
                 <label for="envio">Metodo de envio</label>
                 <select required name="tipoEnvio" id="envio">
                     <option disabled selected>Selecione...</option>
-                    <option value="1">Sedex</option>
-                    <option value="2">Pac</option>
-                    <option value="3">JetLog</option>
+                    <option value="1">Sedex (<?= $frete ?>)</option>
+                    <option value="2">Pac (<?= $frete ?>)</option>
+                    <option value="3">JetLog (<?= $frete ?>)</option>
                     <option value="4">Retirada</option>
                 </select>
 <?php
