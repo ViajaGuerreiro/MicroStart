@@ -62,7 +62,7 @@
                 <input readonly type="number" value="<?= $linha['Disponivel'] ?>" id="cxDisponivel">
 
                 <label for="cxDisponivel">Escolha quantos lotes deseja</label>
-                <input required max="<?= $linha['Disponivel'] ?>" type="number" name="quantidadeComprar" id="cxDisponivel">
+                <input required min="1" max="<?= $linha['Disponivel'] ?>" type="number" name="quantidadeComprar" id="cxDisponivel">
                 
 
                 <label for="cxDescricao">Descrição</label>

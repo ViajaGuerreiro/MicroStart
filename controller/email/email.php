@@ -19,6 +19,8 @@ try{
     $mail -> port = 587;
 
     $mail -> setFrom('microstart.email@gmail.com');
+
+   // email do usuario (utilizar função  read($id))
     $mail -> addAddress('');
 
     $mail -> isHTML(true);

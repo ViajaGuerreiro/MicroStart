@@ -2,7 +2,7 @@
 
 class Produto{
     //tabela lote
-    private $idProd, $produto, $precoLote, $Qil, $tamanho, $lotesDisponiveis, $descricao;
+    private $idProd, $produto, $precoLote, $Qil, $tamanho, $lotesDisponiveis, $descricao, $img;
 
     public function setIdProd($idProd){
         $this -> idProd = $idProd;
@@ -58,6 +58,14 @@ class Produto{
 
     public function getDescricao(){
         return $this -> descricao;
+    }
+
+    public function setImg($img){
+        $this -> img = $img;
+    }
+
+    public function getImg(){
+        return $this -> img;
     }
 
     //tabela marca

@@ -13,19 +13,14 @@ $cliente = new ClienteDao();
 
 $linhas = $cliente->read($_SESSION['id']);
 
-foreach($linhas as $linha)
-{
-    if($linha['plano_atual'] == "G")
-    {
+foreach ($linhas as $linha) {
+    if ($linha['plano_atual'] == "G") {
         $taxa = 0.14;
         $frete = 50;
-        if($tipoEnvio == 4)
-        {
+        if ($tipoEnvio == 4) {
             $frete = 0;
         }
-    }
-    elseif($linha['plano_atual'] == "P")
-    {
+    } elseif ($linha['plano_atual'] == "P") {
         $taxa = 0.07;
         $frete = 0;
     }
@@ -33,8 +28,6 @@ foreach($linhas as $linha)
 
 
 if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoEnvio != "" && $idProduto != "") {
-
-    
 
     $access_token = "TEST-2311180941663868-052216-e6d12bd3555c35b60a50e555c8184c8d-1128372940";
 
@@ -53,9 +46,9 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
     $prefences->items = array($produtoCom);
 
     $prefences->back_urls = array(
-        "success" => 'localhost/microstart/View/pagSucesso.php',
-        "failure" => 'localhost/microstart/View/pagFalha.php',
-        "pending" => 'localhost/microstart/View/pagPendente.php'
+        "success" => 'localhost:8080/microstart/View/pagSucesso.php',
+        "failure" => 'localhost:8080/microstart/View/pagFalha.php',
+        "pending" => 'localhost:8080/microstart/View/pagPendente.php'
     );
 
     $prefences->notification_url = 'localhost/microstart/View/notificacao.php';
@@ -74,7 +67,7 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
     $produto->setPrecoLote($precoLote);
     $produto->setStatusPag('pendente');
 
-    $comprar->comprarProd($_SESSION['id'],$produto);
+    $comprar->comprarProd($_SESSION['id'], $produto);
 
     header('Location: ' . $link);
 }

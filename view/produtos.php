@@ -26,14 +26,14 @@
 
 <?php
         $produtoDao = new ProdutoDao();
-        $linhas = $produtoDao->read_prod();
+        $linhas = $produtoDao->read_prod($_SESSION['id']);
 
         if(!$linhas == null) {
             foreach($linhas as $linha) {
 ?>
                     <div id="produtos">
                         <a href="produto.php?nome=<?= $linha['produto'] ?>">
-                            <img src="img/produtos/teste.jpg" alt="">
+                            <img src="img/produtos/<?=$linha['img']?>" alt="">
                             <input readonly type="text" value="<?= $linha['produto']?>" id="cxProduto">
                             <input readonly type="number" value="<?= $linha['preco_lote']?>" id="cxPreco">
                             <button>Ver mais</button>
@@ -41,7 +41,8 @@
                     </div>
 <?php
         }
-    } else {
+    } 
+    else {
         echo " <script>
                             alert('Não há nenhum produto disponivel');
 
