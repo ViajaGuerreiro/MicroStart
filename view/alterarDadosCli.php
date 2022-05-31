@@ -202,3 +202,4 @@
         {
             echo("<h2>Nenhum Produto cadastrado </h2>");
         }
+        ?>
