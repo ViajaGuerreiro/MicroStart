@@ -10,24 +10,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-dk navbar-light bg-light">
+<nav class="navbar navbar-expand-dk navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="" width="30" height="30" alt="">
           </a>
-        <a class="navbar-brand" href="#">MicroStart</a>
+        <a class="navbar-brand" href="../index.php">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="../MicroStart/view/loginCli.php">Entrar</a>
+              <a class="nav-link" href="alterarDadosCli.php">dados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../MicroStart/view/produtos.php">Produtos</a>
+              <a class="nav-link" href="produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../MicroStart/contoller/alterarDadosCli.php">Dados</a>
+              <a class="nav-link" href="cadastrarProduto.php">Cadastrar Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../controller/logout.php">Sair</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Plano Empresarial</a>

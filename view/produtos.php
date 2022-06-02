@@ -1,9 +1,12 @@
 <?php
 session_start();
-include_once '../controller/verificaLogin.php';
 include_once '../model/ProdutoDao.php';
-include_once 'nav.php';
-include_once 'navSair.php';
+if(!isset($_SESSION['id'])) {
+    include_once 'nav.php';
+}
+else {
+    include_once 'navSair.php';
+}
 ?>
 
 <!DOCTYPE html>

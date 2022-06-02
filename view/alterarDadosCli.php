@@ -20,7 +20,6 @@
         include_once '../controller/verificaLogin.php';
         require_once '../model/ClienteDao.php';
         require_once '../model/ProdutoDao.php';
-        include_once './nav.php';
 
         $clienteDao = new ClienteDao();
         $produtoDao = new ProdutoDao();
@@ -73,13 +72,6 @@
                 <!-- ALTERAR DADOS CLIENTE -->
 
             <?php
-        }
-        foreach ($linhasProd as $linhaProd) {
-
-            ?>
-    
-
-        <?php
         }
         if(!$linhasProd == null) {
             foreach ($linhasProd as $linhaProd) {
