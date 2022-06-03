@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'navSair.php';
 include_once '../controller/verificaLogin.php';
 
 

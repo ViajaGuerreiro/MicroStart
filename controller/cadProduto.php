@@ -5,7 +5,7 @@
     var_dump($img);
     var_dump($nomeProduto);
 
-   /* if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "" && $img != "") {
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "" && $img != "") {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
 
@@ -51,5 +51,5 @@
 
                     window.location.href = '../view/cadastrarProduto.php';
                 </script>";
-    }*/
+    }
 ?>

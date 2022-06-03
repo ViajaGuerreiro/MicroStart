@@ -14,14 +14,14 @@
         <a class="navbar-brand" href="#">
             <img src="" width="30" height="30" alt="">
           </a>
-        <a class="navbar-brand" href="#">MicroStart</a>
+        <a class="navbar-brand" href="../index.php">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="../MicroStart/controller/logout.php">Sair</a>
+              <a class="nav-link" href="../MicroStart/view/loginCli.php">Entrar</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../MicroStart/view/produtos.php">Produtos</a>
