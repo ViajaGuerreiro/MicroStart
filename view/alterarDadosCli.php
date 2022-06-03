@@ -168,7 +168,8 @@
                                 <td><?= $linhaProd['Preco'] ?></td>
                                 <td id="crud">
                                     <button id="btn-div" type="submit" class="btn">visualizar</button>
-                                    <button id="btnAlterar" type="submit" class="btn">excluir</button>
+                                   <a href="../controller/deletarDadosProd.php?idProduto=<?php echo $linhaProd['idProduto'];?>"> <button id="btnAlterar"  type="submit" class="btn"> Excluir</button></a>
+                                   
                                 </td>
                             </tr>
                         </tbody>
