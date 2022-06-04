@@ -26,7 +26,7 @@ class ProdutoDao
 
         //tabela produto
 
-        $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao, img) values ( ?,?,?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values ( ?,?,?, ?, ?, ?, ?, ?, ?)";
 
         $inserir = Conexao::getInstance()->prepare($sql2);
         $inserir->bindValue(1, $idMarca);
@@ -39,7 +39,6 @@ class ProdutoDao
         $inserir->bindValue(7, $produto->getTamanho());
         $inserir->bindValue(8, $produto->getLotesDisponiveis());
         $inserir->bindValue(9, $produto->getDescricao());
-        $inserir->bindValue(10,$produto->getImg());
         $inserir->execute();
     }
 

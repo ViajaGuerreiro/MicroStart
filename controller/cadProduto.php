@@ -2,10 +2,10 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    var_dump($img);
+    var_dump($_files['img']);
     var_dump($nomeProduto);
 
-    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "" && $img != "") {
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
 
@@ -27,7 +27,7 @@
         $produto->setTamanho($tamanho);
         $produto->setLotesDisponiveis($disponivel);
         $produto->setDescricao($descricao);
-        $produto->setImg($nome_img);
+
 
         //tabela marca
         $produto->setNomeMarca($nomeMarca);

@@ -26,38 +26,6 @@ if ($nomeProduto == null) {
 
 
 <body class="u-body u-xl-mode">
-  <nav>
-    <a href="">Moda</a>
-    <a href="">Tecnologia</a>
-    <a href="">Eletrodomésticos</a>
-    <a href="">Construção</a>
-    <a href="">Outros</a>
-    <a href="../index.php">home</a>
-  </nav>
-  <!-- Carousel-->
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/BANNERS 2/periféricos.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/BANNERS 2/smartwatch.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/BANNERS 2/app.png" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
   <!-- Carousel-->
   <div style="margin: 15px;">
     <a href="./produtos.php">
@@ -102,9 +70,14 @@ if ($nomeProduto == null) {
                         <h2 style="color:rgb(66, 136, 187); font-family: candara;text-transform: uppercase; font-weight: bolder; text-align: center;">
                           <?= $nomeProduto ?>
                         </h2>
+                        <!-- não mexer -->
+                        <input type="hidden" value="<?=$linha['idProduto']?>" name="idProduto">
+                        <input type="hidden" value="<?=$nomeProduto?>" name="nomeProduto">
                         <div class="u-custom-font u-font-merriweather u-product-control u-product-price u-product-price-1">
                           <div class="u-price-wrapper u-spacing-10">
                             <div class="u-price u-text-palette-4-base" style="color: green; font-family: calibri; font-size: x-large; font-weight: bold;">$<?= $linha['Preco'] ?></div>
+                            <!-- não mexer -->
+                            <input type="hidden" value="<?= $linha['Preco']?>" name="precoLote">
                           </div>
                         </div>
                         <div style="font-family: calibri; font-size: x-large; font-weight: bold; color: black;">

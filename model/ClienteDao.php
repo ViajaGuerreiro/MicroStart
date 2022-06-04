@@ -116,10 +116,8 @@ class ClienteDao
             if(password_verify($senha, $dado['senha'])) {
                 $_SESSION['id'] = $dado['cod_cli'];
                 echo " <script>
-                    alert('Usuario Logado');
-
-                    window.location.href = '../index.php';
-                </script>";
+                            window.location.href = '../index.php';
+                        </script>";
                 exit();
             }
             else {

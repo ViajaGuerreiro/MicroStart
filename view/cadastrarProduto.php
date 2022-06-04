@@ -4,18 +4,19 @@ include_once 'navSair.php';
 include_once '../controller/verificaLogin.php';
 
 
-$nome_img = null;
+
 //imagem cadastra na pasta img/produtos porem não salva no banco de dados o caminho, e cada vez que recarrega a pagina a variavel $_FILES['img'] faz gerar uma cópia do arquivo anterior upado (LEMBRETE:ARRUMAR)
 if(!$_FILES['img'] == null) {
-if(isset($_FILES['img'])) {
-    $extensao = strtolower(substr($_FILES['img']['name'], -4));
-    $nome_img = md5(time() . $extensao);
-    $diretorio = 'img/produtos/';
+    if(isset($_FILES['img'])) {
+        $extensao = strtolower(substr($_FILES['img']['name'], -4));
+        $nome_img = md5(time() . $extensao);
+        $diretorio = 'img/produtos/';
 
-    $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$nome_img);
+        $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$nome_img);
 
+    }
 }
-}
+var_dump($nome_img);
 ?>
 
 <!DOCTYPE html>
@@ -91,22 +92,22 @@ if(isset($_FILES['img'])) {
 
                 <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
                     <img src="" for="lblImagem" class="form-label">Adicionar imagem do produto:</img>
-                    <input type="file" id="myFile" name="img">
+                    <input type="file" id="myFile" name="<?=$nome_img?>">
                 </div>
 
                 <img src="img/produtos/<?=$nome_img?>" for="lblImagem" class="form-label">Adicionar imagem do produto:</img>
 
-                <a href="listaprodutos.html"> <button type="submit" class="btn btn-outline-primary btn-lg" style="float: right;" method="post">Cadastrar Produto</button> </a>
+                <a> <button type="submit" class="btn btn-outline-primary btn-lg" style="float: right;">Cadastrar Produto</button> </a>
             </form>
 
-            <form action="cadastrarProduto.php" method="POST" enctype="multipart/form-data">
+            <!--<form action="cadastrarProduto.php" method="POST" enctype="multipart/form-data">
             <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
                     
                     <input type="file" id="myFile" name="img">
                 </div>
 
                 <button>Cadastrar imagem</button>
-            </form>
+            </form>-->
         </div>
     </main>
 </body>
