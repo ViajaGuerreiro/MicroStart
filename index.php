@@ -118,7 +118,7 @@ session_start();
       <div class="u-align-left u-container-style u-expanded-width-xs u-group u-palette-1-light-3 u-radius-10 u-shape-round u-group-1">
         <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
           <h1 class="u-custom-font u-text u-text-palette-1-light-1 u-text-1"> MicroStart</h1>
-          <p class="u-text u-text-2">Insira o que é MicroStart aqui!.</p>
+          <p class="u-text u-text-2">A MicroStart é uma companhia que busca conectar pequenos empreendedores com fornecedores nacionais de forma rápida e fácil, impulsionando o seu próprio negócio!</p>
           <a href="" class="u-active-palette-1-light-1 u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-6 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-2">Empreenda conosco!</a>
         </div>
       </div>
@@ -126,33 +126,33 @@ session_start();
   </section>
   <section class="u-align-center u-clearfix u-palette-1-light-3 u-valign-middle u-section-3" id="carousel_00a7">
     <h2 class="u-text u-text-default u-text-1">Com o que trabalhamos?</h2>
-    <p class="u-text u-text-default-lg u-text-default-xl u-text-2">Uma breve explicação sobre os produtos</p>
+    <p class="u-text u-text-default-lg u-text-default-xl u-text-2">Todos produtos são anunciados em lotes por outros fornecedores. Portanto nos encarregamos de realizar a comunicação e atendimento entre o vendedor e comprador, garantindo segurança e confiança desde a compra até a entrega!</p>
     <div class="u-expanded-width u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
     <div class="u-list u-list-1">
       <div class="u-repeater u-repeater-1">
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-1">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
             <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1" data-image-width="700" data-image-height="500" src="images/11.png">
-            <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Produto 1</h4>
-            <p class="u-text u-text-4">Descrição</p>
-            <a href="#" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
+            <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Meias</h4>
+            <p class="u-text u-text-4">50 Meias por apenas R$70,00!</p>
+            <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
           </div>
         </div>
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-2">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
             <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-2" data-image-width="700" data-image-height="500" src="images/2.png">
-            <h4 class="u-text u-text-default u-text-palette-1-base u-text-5">Produto 2</h4>
-            <p class="u-text u-text-6">Descrição</p>
-            <a href="#" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
+            <h4 class="u-text u-text-default u-text-palette-1-base u-text-5">Smart Watch</h4>
+            <p class="u-text u-text-6">10 SmartWatches por apenas $300,00!</p>
+            <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
 
           </div>
         </div>
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-3">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
             <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="700" data-image-height="500" src="images/6c7decbc-d9d3-4316-5906-19d76e6c84f3.png">
-            <h4 class="u-text u-text-default u-text-palette-1-base u-text-7">Produto 3</h4>
-            <p class="u-text u-text-8">Descrição</p>
-            <a href="#" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
+            <h4 class="u-text u-text-default u-text-palette-1-base u-text-7">Disco de Vinil</h4>
+            <p class="u-text u-text-8">10 Discos de Vinil por apenas R$120,00! </p>
+            <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
           </div>
         </div>
       </div>
@@ -178,17 +178,7 @@ session_start();
               </span>
               <h4 class="u-custom-font u-text u-text-palette-1-base u-text-3">Plano empresarial</h4>
               <ul class="u-custom-list u-text u-text-4">
-                <li>
-                  <div class="u-list-icon u-list-icon-1">
-                    <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-5c29">
-                      <g>
-                        <g>
-                          <polygon points="339.719,27.855 120.922,282.666 29.143,196.838 0,228.001 124.293,344.235 372.09,55.65   "></polygon>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>Descrição
-                </li>
+                 <label> Adquira já o plano Premium da MicroStart!<br> Você ganha diversas vantagens como: </label>
                 <li>
                   <div class="u-list-icon u-list-icon-2">
                     <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-5c29">
@@ -198,7 +188,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Frete grátis
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-3">
@@ -209,7 +199,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Descontos exclusivos
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-4">
@@ -220,7 +210,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Entregas rápidas
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-5">
@@ -231,7 +221,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Taxa adicional por apenas 7%
                 </li>
               </ul>
             </div>
@@ -254,28 +244,9 @@ session_start();
               </span>
               <h4 class="u-custom-font u-text u-text-palette-1-base u-text-5">Garantia de pagamento</h4>
               <ul class="u-custom-list u-text u-text-6">
-                <li>
-                  <div class="u-list-icon u-list-icon-6">
-                    <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-55e9">
-                      <g>
-                        <g>
-                          <polygon points="339.719,27.855 120.922,282.666 29.143,196.838 0,228.001 124.293,344.235 372.09,55.65   "></polygon>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>Descrição
-                </li>
-                <li>
-                  <div class="u-list-icon u-list-icon-7">
-                    <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-55e9">
-                      <g>
-                        <g>
-                          <polygon points="339.719,27.855 120.922,282.666 29.143,196.838 0,228.001 124.293,344.235 372.09,55.65   "></polygon>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>Descrição
-                </li>
+              
+                
+              
                 <li>
                   <div class="u-list-icon u-list-icon-8">
                     <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-55e9">
@@ -285,7 +256,18 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Suas compras passam por diversas políticas que garantem o recebimento e qualidade dos produtos
+                </li>
+                <li>
+                  <div class="u-list-icon u-list-icon-6">
+                    <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-55e9">
+                      <g>
+                        <g>
+                          <polygon points="339.719,27.855 120.922,282.666 29.143,196.838 0,228.001 124.293,344.235 372.09,55.65   "></polygon>
+                        </g>
+                      </g>
+                    </svg>
+                  </div> Temos uma diversidade de formas de pagamento e transportadoras
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-9">
@@ -296,8 +278,10 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Caso ocorra algum problema com a compra é possível contatar o fornecedor para resolver o ocorrido
                 </li>
+
+                
                 <li>
                   <div class="u-list-icon u-list-icon-10">
                     <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-55e9">
@@ -307,7 +291,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Asseguramos reembolso em caso de contratempos
                 </li>
               </ul>
             </div>
@@ -343,7 +327,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Seus dados pessoais e financeiros são protegidos e passam por diversas técnicas de encriptação de alto padrão de segurança
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-12">
@@ -354,7 +338,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Com a nossa parceria com o Mercado Pago seu pagamento é garantido e protegido sem riscos de perda
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-13">
@@ -365,7 +349,7 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-14">
@@ -376,19 +360,9 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Descrição
+                  </div>Suas informações são divulgadas apenas para terceiros responsáveis pelas entregas, ninguém mais tem acesso a seus dados pessoais!
                 </li>
-                <li>
-                  <div class="u-list-icon u-list-icon-15">
-                    <svg class="u-svg-content" viewBox="0 0 372.09 372.09" x="0px" y="0px" id="svg-ef89">
-                      <g>
-                        <g>
-                          <polygon points="339.719,27.855 120.922,282.666 29.143,196.838 0,228.001 124.293,344.235 372.09,55.65   "></polygon>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>Descrição
-                </li>
+                
               </ul>
 
   </section>
@@ -419,7 +393,7 @@ session_start();
                 </g>
               </svg></span>
             <h5 class="u-text u-text-default u-text-palette-1-base u-text-3">Telefone</h5>
-            <p class="u-text u-text-4">9999-9999 <br>9999-9999
+            <p class="u-text u-text-4">(00) 1234-5678 <br>(00) 8765-4321
             </p>
           </div>
         </div>
@@ -432,7 +406,7 @@ session_start();
                 <path d="m87 227h-47c-22.091 0-40 17.909-40 40v205c0 22.091 17.909 40 40 40h47c22.091 0 40-17.909 40-40v-205c0-22.091-17.909-40-40-40z"></path>
               </svg></span>
             <h5 class="u-text u-text-default u-text-palette-1-base u-text-5">Nosso Propósito</h5>
-            <p class="u-text u-text-6">Nosso propósito</p>
+            <p class="u-text u-text-6">Auxiliar e impulsionar o próprio negócio de iniciantes e pequenos empreendedores!</p>
           </div>
         </div>
         <div class="u-align-center u-container-style u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-4">
@@ -462,7 +436,7 @@ session_start();
               </svg></span>
             <h5 class="u-text u-text-default u-text-palette-1-base u-text-7">Email</h5>
             <p class="u-text u-text-8">
-              <a href="mailto:hello@theme.com" class="u-active-none u-border-1 u-border-palette-1-base u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">hello@theme.com</a>
+              <a href="mailto:microstart.email@gmail.com" class="u-active-none u-border-1 u-border-palette-1-base u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">microstart.email@gmail.com</a>
             </p>
           </div>
         </div>
@@ -474,7 +448,7 @@ session_start();
           <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
             <div class="u-container-layout u-container-layout-5">
               <h3 class="u-text u-text-default u-text-9">Fala diretamente com a gente!</h3>
-              <h6 class="u-custom-font u-text u-text-font u-text-10">Algum texto...</h6>
+              <h6 class="u-custom-font u-text u-text-font u-text-10">Em caso de dúvida ou sugestão contate-nos por e-mail ou envie uma mensagem!</h6>
               <p class="u-text u-text-11">Nos encontre também em outros canais:</p>
               <div class="u-social-icons u-spacing-20 u-social-icons-1">
                 <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-5">
