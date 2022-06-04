@@ -144,9 +144,9 @@ if ($nomeProduto == null) {
                         <?php
                         if (isset($_SESSION['id'])) {
                         ?>
-                          <a class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" style="background-color:rgb(66, 136, 187); border-radius: 5px; color:white; font-weight: bold; margin-left: 100px;">
+                          <button class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" style="background-color:rgb(66, 136, 187); border-radius: 5px; color:white; font-weight: bold; margin-left: 100px;">
                             Comprar
-                          </a>
+                          </button>
 
                         <?php
                         } else {
