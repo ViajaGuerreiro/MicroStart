@@ -98,9 +98,11 @@
 
                             </p>
                         </div>
-                        <button class="btnComprar"><a class="vermais" href="produto.php?nome=<?= $linha['produto'] ?>">
+                        <a class="vermais" href="produto.php?nome=<?= $linha['produto'] ?>">
+                        <button class="btnComprar">
                                 <p class="txtComprar">Ver mais</p>
                         </button>
+                        </a>
                     </div>
                 </div>
        
