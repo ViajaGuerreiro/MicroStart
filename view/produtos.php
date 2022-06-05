@@ -26,6 +26,7 @@ include_once '../model/ProdutoDao.php';
 
 <body>
     <?php
+        include_once 'navSair.php'; 
         $produtoDao = new ProdutoDao();
         if(!isset($_SESSION['id'])) {
             $linhas = $produtoDao->read_prod(''); 
@@ -36,34 +37,6 @@ include_once '../model/ProdutoDao.php';
         if (!$linhas == null) {
     ?>
         <main>
-            <nav class="navbar navbar-expand-dk navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <img src="" width="30" height="30" alt="">
-                </a>
-                <a class="navbar-brand" href="../index.php">MicroStart</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="">Moda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Tecnologia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Eletrodomésticos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Construção</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Outros</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
             <!-- Carousel-->
 
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">

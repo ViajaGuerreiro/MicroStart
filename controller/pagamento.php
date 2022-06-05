@@ -60,14 +60,14 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
 
     $link = $prefences->sandbox_init_point;
 
-    $produto->setIdTrans($tipoEnvio);
+    /*$produto->setIdTrans($tipoEnvio);
     $produto->setIdProd($idProduto);
     $produto->setQtdComprar($quantidadeComprar);
     $produto->setRef($ref);
     $produto->setPrecoLote($precoLote);
     $produto->setStatusPag('pendente');
 
-    $comprar->comprarProd($_SESSION['id'], $produto);
+    $comprar->comprarProd($_SESSION['id'], $produto);*/
 
     header('Location: ' . $link);
 }
