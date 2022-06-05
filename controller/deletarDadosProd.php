@@ -14,9 +14,9 @@ $produtoDao->delete_prod($produto);
 
 //Lembrete: Direcionar pagina depois.
 echo " <script>
-            alert('Dados do produto excluídos com sucesso');
+            alert('Produto excluído com sucesso');
 
-            window.location.href = '../index.php';
+            window.location.href = '../view/alterarDadosCli.php';
         </script>";
 
 ?>

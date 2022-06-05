@@ -16,6 +16,7 @@
     <main>
         <?php
         session_start();
+        include_once 'navSair.php';
         include_once '../controller/verificaLogin.php';
         require_once '../model/ClienteDao.php';
         require_once '../model/ProdutoDao.php';
@@ -25,12 +26,36 @@
         $linhas = $clienteDao->read($_SESSION['id']);
         $linhasProd = $produtoDao->read_prod_id($_SESSION['id']);
 
+        //imagem cadastra na pasta img/produtos porem não salva no banco de dados o caminho, e cada vez que recarrega a pagina a variavel $_FILES['img'] faz gerar uma cópia do arquivo anterior upado (LEMBRETE:ARRUMAR)
+        /*if (!$_FILES['img'] == null) {
+            if (isset($_FILES['img'])) {
+                $extensao = strtolower(substr($_FILES['img']['name'], -4));
+                $nome_img = md5(time() . $extensao);
+                $diretorio = 'img/produtos/';
+
+                $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio . $nome_img);
+            }
+        }
+        var_dump($nome_img);*/
+
+        /*// HTML Excluir depois
+        <!--<form action="cadastrarProduto.php" method="POST" enctype="multipart/form-data">
+            <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
+                    
+                    <input type="file" id="myFile" name="img">
+                </div>
+
+                <button>Cadastrar imagem</button>
+            </form>-->
+        */
+
 
         foreach ($linhas as $linha) {
 
         ?>
             <!-- ALTERAR DADOS CLIENTE -->
             <h1 class="alterar">Alterar dados do Cliente</h1>
+
             <div id="form-alterar">
                 <form action="../controller/alterarDadosCli.php" method="post" class="row g-3" id="dados">
                     <div id="form-alterar-nome" class="col-md-6">
@@ -43,7 +68,7 @@
                     </div>
                     <div class="col-3" id="form-alterar-data_nasc">
                         <label class="form-label" for="cxData_nasc">Data de Nascimento:</label>
-                        <input class="form-control" type="date" name="data_nasc" id="cxData_nasc" value="<?= $linha['nascimento_cli'] ?>">
+                        <input class="form-control" type="text" name="data_nasc" id="cxData_nasc" value="<?= $linha['nascimento_cli'] ?>">
                     </div>
                     <div class="col-3" id="form-alterar-cnpj">
                         <label class="form-label" for="cxCNPJ">CNPJ:</label>
@@ -71,8 +96,18 @@
                 <!-- ALTERAR DADOS CLIENTE -->
 
                 <!-- ALTERAR DADOS PRODUTO -->
+                <?php
+                if (!$linhasProd == null) {
+                ?>
 
-                <h1 class="alterar">Alterar dados do Produto</h1>
+                    <h1 class="alterar">Alterar dados do Produto</h1>
+                <?php
+                } else {
+                ?>
+                    <h1 class="alterar">Nenhum Produto Cadastrado</h1>
+                <?php
+                }
+                ?>
                 <!-- CADASTRAR PRODUTO -->
 
                 <div class="col-12">
@@ -101,7 +136,7 @@
 
                         <div id="form-cadastro-produto" class="col-md-6">
                             <label for="cxProduto" class="form-label">Produto:</label>
-                            <input required type="text" class="form-control" name="nomeProduto" minlength="5" maxlength="15"id="cxProduto">
+                            <input required type="text" class="form-control" name="nomeProduto" minlength="5" maxlength="15" id="cxProduto">
                         </div>
 
                         <div id="form-cadastro-preco" class="col-md-6">
@@ -124,7 +159,7 @@
 
                         <div id="form-cadastro-descricao" class="col-md-6">
                             <label for="cxDescricao" class="form-label">Descrição:</label>
-                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="20" id="cxDescricao"> 
+                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="20" id="cxDescricao">
                         </div>
 
 
@@ -148,92 +183,94 @@
                 <!-- CADASTRAR PRODUTO -->
 
 
-            <?php
-        }
-        foreach ($linhasProd as $linhaProd) {
+                <?php
+            }
+            if (!$linhasProd == null) {
+                foreach ($linhasProd as $linhaProd) {
 
-            ?>
-                <div id="form-alterar">
-                    <table class="records">
-                        <thead>
-                            <tr>
-                                <th>Nome do Produto</th>
-                                <th> Valor produto</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?= $linhaProd['Nome do Produto'] ?></td>
-                                <td><?= $linhaProd['Preco'] ?></td>
-                                <td id="crud">
-                                    <button id="btn-div" type="submit" class="btn">visualizar</button>
-                                   <a href="../controller/deletarDadosProd.php?idProduto=<?php echo $linhaProd['idProduto'];?>"> <button id="btnAlterar"  type="submit" class="btn"> Excluir</button></a>
-                                   
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                ?>
+                    <div id="form-alterar">
+                        <table class="records">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Produto</th>
+                                    <th> Valor produto</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><?= $linhaProd['Nome do Produto'] ?></td>
+                                    <td><?= $linhaProd['Preco'] ?></td>
+                                    <td id="crud">
+                                        <button id="btn-div" type="submit" class="btn">visualizar</button>
+                                        <a href="../controller/deletarDadosProd.php?idProduto=<?php echo $linhaProd['idProduto']; ?>"> <button id="btnAlterar" type="submit" class="btn"> Excluir</button></a>
 
-                </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                <div id="container" class="container" style="display: none;">
-                    <form action="../controller/alterarDadosProd.php" method="post" class="row g-3" id="dados">
-                        <div id="form-cadastro-marca" class="col-md-6">
-                            <label for="cxMarca" class="form-label">Marca:</label>
-                            <input type="text" class="form-control" name="nomeMarca" id="cxMarca">
-                        </div>
+                    </div>
 
-
-                        <div id="form-cadastro-produto" class="col-md-6">
-                            <label for="cxProduto" class="form-label">Produto:</label>
-                            <input type="text" class="form-control" name="nomeProduto" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
-                        </div>
-
-                        <div id="form-cadastro-preco" class="col-md-6">
-                            <label for="cxPreco" class="form-label">Preço do Lote: </label>
-                            <div class=" input-group" style="max-width: 400px;">
-                                <span class="input-group-text"> R$</span>
-                                <input type="number" step="0.01" name="preco" min="0.01" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
+                    <div id="container" class="container" style="display: none;">
+                        <form action="../controller/alterarDadosProd.php" method="post" class="row g-3" id="dados">
+                            <div id="form-cadastro-marca" class="col-md-6">
+                                <label for="cxMarca" class="form-label">Marca:</label>
+                                <input type="text" readonly value="<?= $linhaProd['nomeMarca'] ?>" class="form-control" name="nomeMarca" id="cxMarca">
                             </div>
-                        </div>
 
 
-                        <div id="form-cadastro-QIL" class="col-md-6">
-                            <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
-                            <input type="number" class="form-control" name="QIL" id="cxQIL" value="<?= $linhaProd['Quantidade'] ?>">
-                        </div>
+                            <div id="form-cadastro-produto" class="col-md-6">
+                                <label for="cxProduto" class="form-label">Produto:</label>
+                                <input type="text" class="form-control" name="nomeProduto" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
+                            </div>
 
-                        <div id="form-cadastro-tamanho" class="col-md-6">
-                            <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
-                            <input type="text" class="form-control" name="tamanho" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
-                        </div>
-
-                        <div id="form-cadastro-descricao" class="col-md-6">
-                            <label for="cxDescricao" class="form-label" minlength="5" maxlength="20">Descrição:</label>
-                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
-                        </div>
+                            <div id="form-cadastro-preco" class="col-md-6">
+                                <label for="cxPreco" class="form-label">Preço do Lote: </label>
+                                <div class=" input-group" style="max-width: 400px;">
+                                    <span class="input-group-text"> R$</span>
+                                    <input type="number" step="0.01" name="preco" min="0.01" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
+                                </div>
+                            </div>
 
 
-                        <div id="form-cadastro-disponivel" class="col-md-6">
-                            <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
-                            <input type="number" class="form-control" name="disponivel" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
-                        </div>
-                        <div id="form-cadastro-imagem" class="col-md-6">
-                            <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
-                            <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
-                        </div>
-                        <div id="img-container">
-                            <img id="preview" src="" style="justify-content:center;">
-                        </div>
-                        <div class="col-12">
-                            <button id="btnAlterar" type="submit" class="btn"> Alterar dados</button>
-                        </div>
-                    </form>
+                            <div id="form-cadastro-QIL" class="col-md-6">
+                                <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
+                                <input type="number" class="form-control" name="QIL" id="cxQIL" value="<?= $linhaProd['Quantidade'] ?>">
+                            </div>
+
+                            <div id="form-cadastro-tamanho" class="col-md-6">
+                                <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
+                                <input type="text" class="form-control" name="tamanho" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
+                            </div>
+
+                            <div id="form-cadastro-descricao" class="col-md-6">
+                                <label for="cxDescricao" class="form-label" minlength="5" maxlength="20">Descrição:</label>
+                                <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
+                            </div>
+
+
+                            <div id="form-cadastro-disponivel" class="col-md-6">
+                                <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
+                                <input type="number" class="form-control" name="disponivel" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
+                            </div>
+                            <div id="form-cadastro-imagem" class="col-md-6">
+                                <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
+                                <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
+                            </div>
+                            <div id="img-container">
+                                <img id="preview" src="" style="justify-content:center;">
+                            </div>
+                            <div class="col-12">
+                                <button id="btnAlterar" type="submit" class="btn"> Alterar dados</button>
+                            </div>
+                        </form>
 
     </main>
 <?php
-        }
+                }
+            }
 ?>
 
 <!-- JS DIV CADASTRAR -->

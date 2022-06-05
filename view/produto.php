@@ -41,16 +41,23 @@ if ($nomeProduto == null) {
 
       <?php
       $clienteDao = new ClienteDao();
-      $linhasCli = $clienteDao->read($_SESSION['id']);
-      foreach ($linhasCli as $linhaCli) {
-        if ($linhaCli['plano_atual'] == "G") {
-          $taxa = "14%";
-          $frete = "Frete R$50";
-        } elseif ($linhaCli['plano_atual'] == "P") {
-          $taxa = "7%";
-          $frete = "Frete Gratis";
+      if(!isset($_SESSION['id'])) {
+        $linhasCli = $clienteDao->read(null);
+        $taxa = "um valor minino";
+        $frete = "Preços imperdiveis";
+      } else {
+        $linhasCli = $clienteDao->read($_SESSION['id']);
+        foreach ($linhasCli as $linhaCli) {
+          if ($linhaCli['plano_atual'] == "G") {
+            $taxa = "14%";
+            $frete = "Frete R$50";
+          } elseif ($linhaCli['plano_atual'] == "P") {
+            $taxa = "7%";
+            $frete = "Frete Gratis";
+          }
         }
       }
+
       $produtoDao = new ProdutoDao();
       $linhas = $produtoDao->read_prod_nome($nomeProduto);
       foreach ($linhas as $linha) {
@@ -91,6 +98,7 @@ if ($nomeProduto == null) {
                             Quantidade de itens por lote: <?= $linha['Quantidade'] ?> </br>
                             Tamanhos: <?= $linha['Tamanho'] ?></br>
                             Disponíveis: <?= $linha['Disponivel'] ?></br>
+                            Descrição: <?= $linha['Descricao'] ?></br>
                           </p>
                         </div>
                         </br>

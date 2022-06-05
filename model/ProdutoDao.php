@@ -60,7 +60,7 @@ class ProdutoDao
 
     public function read_prod_id($id)
     {
-        $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao' FROM lote WHERE cod_cli = ?";
+        $sql = "SELECT lote.cod_lote AS 'idProduto', lote.produto as 'Nome do Produto', lote.preco_lote as 'Preco', lote.tamanho_do_item  as 'Tamanho', lote.quantidade_itens_lote as 'Quantidade', lote.lotes_disponiveis as 'Disponivel', lote.descricao as 'Descricao', marca.nome as 'nomeMarca' FROM lote INNER JOIN marca on lote.cod_marca = marca.cod_marca WHERE cod_cli = ?";
 
         $lerInfoProd = Conexao::getInstance()->prepare($sql);
         $lerInfoProd->bindValue(1, $id);

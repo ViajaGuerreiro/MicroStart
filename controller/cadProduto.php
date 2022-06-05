@@ -2,8 +2,8 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    var_dump($_files['img']);
-    var_dump($nomeProduto);
+   // var_dump($_files['img']);
+   // var_dump($nomeProduto);
 
     if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
@@ -40,9 +40,8 @@
         $produtoDao->create_prod($produto, $_SESSION['id']);
 
         echo " <script>
-                    alert('Produto Cadastrado');
 
-                    window.location.href = '../index.php';
+                    window.location.href = '../view/alterarDadosCli.php';
                 </script>";
 
     } else {

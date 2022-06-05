@@ -25,85 +25,95 @@ include_once '../model/ProdutoDao.php';
 </head>
 
 <body>
-
     <?php
-    $produtoDao = new ProdutoDao();
-    $linhas = $produtoDao->read_prod($_SESSION['id']);
-
-    if (!$linhas == null) {
-        foreach ($linhas as $linha) {
+        $produtoDao = new ProdutoDao();
+        if(!isset($_SESSION['id'])) {
+            $linhas = $produtoDao->read_prod(''); 
+        }
+        else {
+            $linhas = $produtoDao->read_prod($_SESSION['id']);
+        }
+        if (!$linhas == null) {
     ?>
-            <main>
+        <main>
             <nav class="navbar navbar-expand-dk navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="" width="30" height="30" alt="">
-          </a>
-        <a class="navbar-brand" href="../index.php">MicroStart</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="">Moda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Tecnologia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Eletrodomésticos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Construção</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Outros</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-                <!-- Carousel-->
+                <a class="navbar-brand" href="#">
+                    <img src="" width="30" height="30" alt="">
+                </a>
+                <a class="navbar-brand" href="../index.php">MicroStart</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Moda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Tecnologia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Eletrodomésticos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Construção</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Outros</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Carousel-->
 
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./img/BANNERS 2/periféricos.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/BANNERS 2/smartwatch.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/BANNERS 2/app.png" class="d-block w-100" alt="...">
-                        </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/BANNERS 2/periféricos.png" class="d-block w-100" alt="...">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="./img/BANNERS 2/smartwatch.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/BANNERS 2/app.png" class="d-block w-100" alt="...">
+                    </div>
                 </div>
-                <!-- FILTRO-->
-                <div class="filtro">
-                    <select class="form-select form-select-lg mb-3 " style="width: 180px; justify-content:right;">
-                        <option selected class="img">Filtrar </option>
-                        <option value="1">Moda </option>
-                        <option value="2">Tecnologia</option>
-                        <option value="3">Eletrodomésticos</option>
-                        <option value="4">Construção</option>
-                        <option value="5">Outros</option>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- FILTRO-->
+            <div class="filtro">
+                <select class="form-select form-select-lg mb-3 " style="width: 180px; justify-content:right;">
+                    <option selected class="img">Filtrar </option>
+                    <option value="1">Moda </option>
+                    <option value="2">Tecnologia</option>
+                    <option value="3">Eletrodomésticos</option>
+                    <option value="4">Construção</option>
+                    <option value="5">Outros</option>
 
-                    </select>
-                </div>
-                <!-- FILTRO-->
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
+                </select>
+            </div>
+            <!-- FILTRO-->
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+
+            <?php
+        }
+
+        if (!$linhas == null) {
+            foreach ($linhas as $linha) {
+            ?>
+
 
                 <!-- Cards Produtos-->
                 <section class="sec">
@@ -129,17 +139,17 @@ include_once '../model/ProdutoDao.php';
                     </div>
 
             <?php
-        }
-    } else {
-        echo " <script>
+            }
+        } else {
+            echo " <script>
                             alert('Não há nenhum produto disponivel');
 
                             window.location.href = '../index.php';
                         </script>";
-    }
+        }
             ?>
                 </section>
-            </main>
+        </main>
 </body>
 
 </html>

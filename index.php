@@ -61,8 +61,9 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
+            <!-- Plano empresarial -->
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Plano Empresarial</a>
+              <a class="nav-link disabled" href="#">Novidades em breve...</a>
             </li>
           </ul>
         </div>
@@ -88,13 +89,11 @@ session_start();
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="view/cadastrarProduto.php">Cadastrar Produtos</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="controller/logout.php">Sair</a>
             </li>
+            <!-- Plano empresarial -->
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Plano Empresarial</a>
+              <a class="nav-link disabled" href="#">Novidades em breve...</a>
             </li>
           </ul>
         </div>

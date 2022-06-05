@@ -29,8 +29,9 @@
             <li class="nav-item">
               <a class="nav-link" href="../MicroStart/contoller/alterarDadosCli.php">Dados</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Plano Empresarial</a>
+             <!-- Plano empresarial -->
+             <li class="nav-item">
+              <a class="nav-link disabled" href="#">Novidades em breve...</a>
             </li>
           </ul>
         </div>
