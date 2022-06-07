@@ -66,6 +66,7 @@ cod_lote int primary key auto_increment
 , lotes_disponiveis int(6) not null
 , ativo varchar(1) default "S" not null
 , descricao varchar(500)
+ , img varchar(40) not null
 , constraint cod_cli_lote foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_marca foreign key(cod_marca) references marca(cod_marca)
 , constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
@@ -123,3 +124,15 @@ DELIMITER $
 		END IF;
 	END
 $
+
+
+
+
+-- LEMBRETE: TESTE(APAGAR DEPOIS) --------------------------------------------------
+-- INSERT INTO registro_venda(cod_cli, cod_trans, cod_lote, quantidade_lotes, data_hora_venda, ref, preco, status_pag)
+-- values (1, 1, 1, 50, '2022/05/01', 111, 50.0, 'pendente');
+
+-- SELECT * FROM LOTE;
+-- SELECT * FROM REGISTRO_VENDA;
+-- ---------------------------------------------------------------------------------
+
