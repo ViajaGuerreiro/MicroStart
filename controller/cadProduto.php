@@ -5,20 +5,25 @@
    // var_dump($_files['img']);
    // var_dump($nomeProduto);
 
-    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
+   /* if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
         require_once("../model/Produto.php");
-        require_once("../model/ProdutoDao.php");
+        require_once("../model/ProdutoDao.php");*/
+        var_dump($_FILES['img']);
+        var_dump($img);
 
-        if(isset($_FILES['img'])) {
+       /* if(isset($_FILES['img'])) {
             $extensao = strtolower(substr($_FILES['img']['name'], -4));
             $nome_img = md5(time() . $extensao);
             $diretorio = '../view/img/produtos/';
         
             $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$nome_img);
+
+            var_dump($nome_img);
         
-        }
+        }*/
+
         
-        $produto = new Produto();
+      /*  $produto = new Produto();
     
         //tabela produto
         $produto->setProduto($nomeProduto);
@@ -27,6 +32,7 @@
         $produto->setTamanho($tamanho);
         $produto->setLotesDisponiveis($disponivel);
         $produto->setDescricao($descricao);
+        $produto->setImg($nome_img);
 
 
         //tabela marca
@@ -50,5 +56,5 @@
 
                     window.location.href = '../view/cadastrarProduto.php';
                 </script>";
-    }
+    }*/
 ?>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../View/css/styledados.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- jQuery -->
+    
     <title>alterar dados do cliente</title>
 </head>
 
@@ -169,7 +171,7 @@
                         </div>
                         <div id="form-cadastro-imagem" class="col-md-6">
                             <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
-                            <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
+                            <input id="img-input" accept="image/jpeg" type="file" name="img" title="Usar arquivo com dimensões 300x300">
                         </div>
                         <div id="img-container">
                             <img id="preview" src="" style="justify-content:center;">
@@ -181,6 +183,16 @@
 
 
                 <!-- CADASTRAR PRODUTO -->
+                <!--TESTE
+ -------------------------------------------------------------------------------------------------------   -->
+                <form action="../controller/cadProduto.php" method="POST" enctype="multipart/form-data">
+            <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
+                    
+                    <input type="file" accept="image/jpeg" id="myFile" name="img">
+                </div>
+<!-- --------------------------------------------------------------------------------------- -->
+                <button>Cadastrar imagem</button>
+            </form>-->
 
 
                 <?php
@@ -309,7 +321,7 @@
 <script>
     var btn = document.getElementById('btn-div');
     var container = document.querySelector('.container');
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', () => {
 
         if (container.style.display === 'block') {
             container.style.display = 'none';
@@ -317,6 +329,9 @@
             container.style.display = 'block';
         }
     });
+
+/* Ajax form Cadastrar produto */
+console.log('teste');
 </script>
 <!-- JS ESCONDER ALTERAR-->
 

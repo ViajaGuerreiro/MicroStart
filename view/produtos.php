@@ -26,13 +26,15 @@ include_once '../model/ProdutoDao.php';
 
 <body>
     <?php
-        include_once 'navSair.php'; 
+         
         $produtoDao = new ProdutoDao();
         if(!isset($_SESSION['id'])) {
             $linhas = $produtoDao->read_prod(''); 
+            include_once 'nav.php';
         }
         else {
             $linhas = $produtoDao->read_prod($_SESSION['id']);
+            include_once 'navSair.php';
         }
         if (!$linhas == null) {
     ?>

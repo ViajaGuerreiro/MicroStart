@@ -83,7 +83,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="view/alterarDadosCli.php">dados</a>
+              <a class="nav-link" href="view/alterarDadosCli.php">Usuario</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
