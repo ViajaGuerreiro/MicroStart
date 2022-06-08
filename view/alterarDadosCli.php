@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="../View/css/styledados.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<<<<<<< HEAD
     <title>alterar dados do cliente</title>
     <?php
     include_once 'navs/navSairAlt.php';
     ?>
+=======
+    <!-- jQuery -->
+    
+    <title>alterar dados do cliente</title>
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 </head>
 
 <body>
@@ -19,6 +25,10 @@
     <main>
         <?php
         session_start();
+<<<<<<< HEAD
+=======
+        include_once 'navSair.php';
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
         include_once '../controller/verificaLogin.php';
         require_once '../model/ClienteDao.php';
         require_once '../model/ProdutoDao.php';
@@ -161,7 +171,11 @@
 
                         <div id="form-cadastro-descricao" class="col-md-6">
                             <label for="cxDescricao" class="form-label">Descrição:</label>
+<<<<<<< HEAD
                             <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="455" id="cxDescricao">
+=======
+                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="20" id="cxDescricao">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                         </div>
 
 
@@ -171,7 +185,11 @@
                         </div>
                         <div id="form-cadastro-imagem" class="col-md-6">
                             <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
+<<<<<<< HEAD
                             <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
+=======
+                            <input id="img-input" accept="image/jpeg" type="file" name="img" title="Usar arquivo com dimensões 300x300">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                         </div>
                         <div id="img-container">
                             <img id="preview" src="" style="justify-content:center;">
@@ -183,11 +201,27 @@
 
 
                 <!-- CADASTRAR PRODUTO -->
+<<<<<<< HEAD
+=======
+                <!--TESTE
+ -------------------------------------------------------------------------------------------------------   -->
+                <form action="../controller/cadProduto.php" method="POST" enctype="multipart/form-data">
+            <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
+                    
+                    <input type="file" accept="image/jpeg" id="myFile" name="img">
+                </div>
+<!-- --------------------------------------------------------------------------------------- -->
+                <button>Cadastrar imagem</button>
+            </form>-->
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
 
                 <?php
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
             if (!$linhasProd == null) {
                 foreach ($linhasProd as $linhaProd) {
 
@@ -226,37 +260,62 @@
 
                             <div id="form-cadastro-produto" class="col-md-6">
                                 <label for="cxProduto" class="form-label">Produto:</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" name="nomeProduto" maxlength="30" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
+=======
+                                <input type="text" class="form-control" name="nomeProduto" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                             </div>
 
                             <div id="form-cadastro-preco" class="col-md-6">
                                 <label for="cxPreco" class="form-label">Preço do Lote: </label>
                                 <div class=" input-group" style="max-width: 400px;">
                                     <span class="input-group-text"> R$</span>
+<<<<<<< HEAD
                                     <input type="number" step="0.01" name="preco" min="0.01" maxlength="10" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
+=======
+                                    <input type="number" step="0.01" name="preco" min="0.01" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                                 </div>
                             </div>
 
 
                             <div id="form-cadastro-QIL" class="col-md-6">
                                 <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
+<<<<<<< HEAD
                                 <input type="number" class="form-control" name="QIL" id="cxQIL" maxlength="6" value="<?= $linhaProd['Quantidade'] ?>">
+=======
+                                <input type="number" class="form-control" name="QIL" id="cxQIL" value="<?= $linhaProd['Quantidade'] ?>">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                             </div>
 
                             <div id="form-cadastro-tamanho" class="col-md-6">
                                 <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" name="tamanho" maxlength="20" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
                             </div>
 
                             <div id="form-cadastro-descricao" class="col-md-6">
                                 <label for="cxDescricao" class="form-label">Descrição:</label>
                                 <input placeholder="Digite aqui..." type="text" class="form-control" maxlength="500" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
+=======
+                                <input type="text" class="form-control" name="tamanho" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
+                            </div>
+
+                            <div id="form-cadastro-descricao" class="col-md-6">
+                                <label for="cxDescricao" class="form-label" minlength="5" maxlength="20">Descrição:</label>
+                                <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                             </div>
 
 
                             <div id="form-cadastro-disponivel" class="col-md-6">
                                 <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
+<<<<<<< HEAD
                                 <input type="number" class="form-control" name="disponivel" maxlength="6" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
+=======
+                                <input type="number" class="form-control" name="disponivel" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                             </div>
                             <div id="form-cadastro-imagem" class="col-md-6">
                                 <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
@@ -312,7 +371,11 @@
 <script>
     var btn = document.getElementById('btn-div');
     var container = document.querySelector('.container');
+<<<<<<< HEAD
     btn.addEventListener('click', function() {
+=======
+    btn.addEventListener('click', () => {
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
         if (container.style.display === 'block') {
             container.style.display = 'none';
@@ -320,6 +383,12 @@
             container.style.display = 'block';
         }
     });
+<<<<<<< HEAD
+=======
+
+/* Ajax form Cadastrar produto */
+console.log('teste');
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 </script>
 <!-- JS ESCONDER ALTERAR-->
 

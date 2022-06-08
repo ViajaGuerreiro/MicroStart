@@ -26,7 +26,11 @@ class ProdutoDao
 
         //tabela produto
 
+<<<<<<< HEAD
         $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values ( ?,?,?, ?, ?, ?, ?, ?, ?)";
+=======
+        $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao, img) values (?, ?,?,?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
         $inserir = Conexao::getInstance()->prepare($sql2);
         $inserir->bindValue(1, $idMarca);
@@ -39,6 +43,10 @@ class ProdutoDao
         $inserir->bindValue(7, $produto->getTamanho());
         $inserir->bindValue(8, $produto->getLotesDisponiveis());
         $inserir->bindValue(9, $produto->getDescricao());
+<<<<<<< HEAD
+=======
+        $inserir->bindValue(10,$produto->getImg());
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
         $inserir->execute();
     }
 
@@ -76,7 +84,11 @@ class ProdutoDao
 
     public function read_prod_nome($nome)
     {
+<<<<<<< HEAD
         $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto',cod_cli AS 'idCliente', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao', img as 'imagem' FROM lote WHERE produto = ?";
+=======
+        $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto',cod_cli AS 'idCliente', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao' FROM lote WHERE produto = ?";
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
         $lerInfoProd = Conexao::getInstance()->prepare($sql);
         $lerInfoProd->bindValue(1, $nome);

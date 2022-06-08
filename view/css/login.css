@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+<<<<<<< HEAD
+=======
+* {
+	box-sizing: border-box;
+}
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
 body {
 	background: #f6f5f7;
@@ -47,8 +53,13 @@ a {
 
 button {
 	border-radius: 20px;
+<<<<<<< HEAD
 	border: 1px solid rgb( 71, 138, 201);
 	background-color: rgb( 71, 138, 201);
+=======
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -62,11 +73,14 @@ button:active {
 	transform: scale(0.95);
 }
 
+<<<<<<< HEAD
 button:hover {
 	border: 2px solid rgb( 100, 187, 250);
     box-shadow: 2px 5px 8px rgba(0,0,0,0.25);
 }
 
+=======
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 button:focus {
 	outline: none;
 }
@@ -92,7 +106,10 @@ input {
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
+<<<<<<< HEAD
     border-radius: 20px;
+=======
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 	width: 100%;
 }
 
@@ -140,9 +157,15 @@ input {
 }
 
 .overlay {
+<<<<<<< HEAD
 	background: rgb( 71, 138, 201);
 	background: -webkit-linear-gradient(to left, rgb( 71, 138, 201), rgb( 233, 243, 250));
 	background: linear-gradient(to left, rgb( 71, 138, 201), rgb( 233, 243, 250));
+=======
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -165,7 +188,11 @@ input {
 	text-align: center;
 	top: 0;
 	height: 100%;
+<<<<<<< HEAD
 	width: 42%;
+=======
+	width: 50%;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }

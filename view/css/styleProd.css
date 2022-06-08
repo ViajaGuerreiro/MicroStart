@@ -331,12 +331,34 @@ display: flex;
     margin-top: 18px;
 }
 
+<<<<<<< HEAD
+=======
+.containerCard {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: white;
+    border-color: rgba(255, 255, 255, 0.422);
+    border-style: groove;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+    height: 500px;
+}
+
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 .vermais {
     text-decoration: none;
     color: white;
 }
 
+<<<<<<< HEAD
 .vermais:hover {
+=======
+vermais:hover {
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
     text-decoration: underline;
     color: rgb(71,138,201);
 }
@@ -349,6 +371,7 @@ display: flex;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .containerCard {
     padding: 15px;
     margin-top: 10px;
@@ -366,18 +389,25 @@ display: flex;
     width: 300px;
     height: 500px;
 }
+=======
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
 .contCard {
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+<<<<<<< HEAD
 
     flex-direction: column;
     flex-wrap: wrap;
     font-family: Arial;
     max-width: 300px;
     max-height: 500px;
+=======
+    flex-direction: column;
+    font-family: Arial;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 }
 
 .imgProduto {
@@ -388,6 +418,7 @@ display: flex;
 }
 
 .textoProduto {
+<<<<<<< HEAD
     max-width: 200px;
     max-height: 500px;
     text-overflow: clip;
@@ -396,6 +427,15 @@ display: flex;
 
 .nomeProd {
     font-weight: 600;
+=======
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+}
+
+.nomeProd {
+    font-weight: 900;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
     color: rgb(71,138,201);
     margin-bottom: -5px;
     text-transform: uppercase;
@@ -411,12 +451,21 @@ display: flex;
     font-weight: bolder;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif, monospace;
     color: green;
+<<<<<<< HEAD
     text-align: justify;
     justify-items: flex-start;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     display: flex;
+=======
+    text-align: left;
+    justify-items: right;
+    justify-content: right;
+    align-items: flex-end;
+    align-content: flex-end;
+    display: block;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 }
 
 .descProd {
@@ -424,12 +473,19 @@ display: flex;
     font-weight: 500;
     font-family: Calibri;
     color: black;
+<<<<<<< HEAD
     text-align: justify;
     justify-items: flex-start;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     display: flex;
+=======
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: justify;
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 }
 
 .btnComprar {

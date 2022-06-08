@@ -11,7 +11,11 @@ include_once '../model/ProdutoDao.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/styleProd.css">
+=======
+    <link rel="stylesheet" href="../View/css/styleProd.css">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- JavaScript bootstrap -->
@@ -24,6 +28,7 @@ include_once '../model/ProdutoDao.php';
     <title>Produtos</title>
 </head>
 
+<<<<<<< HEAD
 <body style="background: -webkit-linear-gradient(to left, rgb(153, 206, 255), rgb( 233, 243, 250));
 
 background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
@@ -36,6 +41,19 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
         else {
             include_once 'navs/navSairProd.php';
             $linhas = $produtoDao->read_prod($_SESSION['id']);
+=======
+<body>
+    <?php
+         
+        $produtoDao = new ProdutoDao();
+        if(!isset($_SESSION['id'])) {
+            $linhas = $produtoDao->read_prod(''); 
+            include_once 'nav.php';
+        }
+        else {
+            $linhas = $produtoDao->read_prod($_SESSION['id']);
+            include_once 'navSair.php';
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
         }
         if (!$linhas == null) {
     ?>
@@ -83,9 +101,12 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
             </br>
             </br>
 
+<<<<<<< HEAD
             <section class="sec">
 
 
+=======
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
             <?php
         }
 
@@ -95,10 +116,18 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
 
 
                 <!-- Cards Produtos-->
+<<<<<<< HEAD
                 <div class="containerCard">
                         <div class="contCard">
                             <div class="textoProduto">
                                 <img src="img/produtos/<?= $linha['img']?>.jpg" alt="">
+=======
+                <section class="sec">
+
+                    <div class="containerCard">
+                        <div class="contCard">
+                            <div class="textoProduto">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                                 <h1 class="nomeProd"> <?= $linha['produto'] ?> </h1>
                                 </br>
                                 <p class="descProd">
@@ -108,6 +137,7 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
 
                                 </p>
                             </div>
+<<<<<<< HEAD
                                 <a class="vermais" href="produto.php?nome=<?= $linha['produto'] ?>">
                                 <button class="btnComprar">
                                     <p class="txtComprar">Ver mais</p>
@@ -115,6 +145,15 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
                                 </a>
                         </div>
                         </div>
+=======
+                            <a class="vermais" href="produto.php?nome=<?= $linha['produto'] ?>">
+                                <button class="btnComprar">
+                                    <p class="txtComprar">Ver mais</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
 
             <?php
             }

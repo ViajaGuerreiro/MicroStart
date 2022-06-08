@@ -46,7 +46,11 @@ label{
     }
 
 }
+<<<<<<< HEAD
     main{
+=======
+    body{
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
         padding: 15px;
     }
    button#btn-cad{

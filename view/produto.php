@@ -70,7 +70,11 @@ if ($nomeProduto == null) {
                 <div class="u-container-style u-expanded-width u-product u-product-1">
                   <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1">
                     <!--product_image-->
+<<<<<<< HEAD
                     <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="../img/produtos/<?=$linha['imagem']?>.jpg">
+=======
+                    <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="./img/produtos/teste.jpg">
+>>>>>>> 06a9cd7c860f6e7f24dd13403004e968112b3285
                     <!--/product_image-->
                     <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1" style="">
                       <div class="u-container-layout u-valign-middle u-container-layout-2">
