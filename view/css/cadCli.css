@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	height: 96vh;
+	padding: 600px;
+
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid rgb( 71, 138, 201);
+	background-color: rgb( 71, 138, 201);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	margin-top: 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	width: 800px;
+	height: 1000px;
+}
+
+.form-container {
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+	padding-bottom: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    justify-items: center;
+	flex-direction: column;
+
+}
+
+
+#form-cadastro{
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: baseline;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 99%;
+	height: 95%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;	
+	text-align: center;
+}
+
+.cadUsu{
+	margin-left: -60px;
+}
+
+.cadEnder{
+	margin-right: 10px;
+}
+
+label{
+	text-align: center;
+}
+
+form {
+	background-color: #FFFFFF;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px;
+	width: 100%;
+	border-radius: 15px;
+}

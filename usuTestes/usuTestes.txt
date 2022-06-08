@@ -1,0 +1,17 @@
+Vendedor
+{
+"id": 1128372940,
+    "nickname": "TETE4101298",
+    "password": "qatest8985",
+    "site_status": "active",
+    "email": "test_user_47263372@testuser.com"
+}
+
+Comprador
+{
+    "id": 1128394997,
+    "nickname": "TESTXEMYSJSY",
+    "password": "qatest2117",
+    "site_status": "active",
+    "email": "test_user_26728407@testuser.com"
+}
