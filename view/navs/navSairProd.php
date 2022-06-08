@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="./alterarDadosCli.php">dados</a>
+          <a class="nav-link" href="./alterarDadosCli.php">Usuarios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./produtos.php">Produtos</a>
@@ -35,7 +35,7 @@
           <a class="nav-link" href="../controller/logout.php">Sair</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Plano Empresarial</a>
+          <a class="nav-link disabled" href="#">Novidades em Breve...</a>
         </li>
       </ul>
     </div>

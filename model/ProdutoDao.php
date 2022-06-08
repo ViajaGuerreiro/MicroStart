@@ -76,7 +76,7 @@ class ProdutoDao
 
     public function read_prod_nome($nome)
     {
-        $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto',cod_cli AS 'idCliente', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao' FROM lote WHERE produto = ?";
+        $sql = "SELECT cod_lote AS 'idProduto', produto as 'Nome do Produto',cod_cli AS 'idCliente', preco_lote as 'Preco', tamanho_do_item  as 'Tamanho', quantidade_itens_lote as 'Quantidade',lotes_disponiveis as 'Disponivel', descricao as 'Descricao', img as 'imagem' FROM lote WHERE produto = ?";
 
         $lerInfoProd = Conexao::getInstance()->prepare($sql);
         $lerInfoProd->bindValue(1, $nome);

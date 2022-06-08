@@ -29,10 +29,10 @@
           <a class="nav-link" href="./produtos.php">Produtos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./alterarDadosCli.php">Dados</a>
+          <a class="nav-link" href="./alterarDadosCli.php">Usuario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Plano Empresarial</a>
+          <a class="nav-link disabled" href="#">Novidades em breve...</a>
         </li>
       </ul>
     </div>

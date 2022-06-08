@@ -62,7 +62,7 @@ session_start();
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Plano Empresarial</a>
+              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
             </li>
           </ul>
         </div>
@@ -82,7 +82,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="view/alterarDadosCli.php">dados</a>
+              <a class="nav-link" href="view/alterarDadosCli.php">Usuarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
@@ -94,7 +94,7 @@ session_start();
               <a class="nav-link" href="controller/logout.php">Sair</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Plano Empresarial</a>
+              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
             </li>
           </ul>
         </div>

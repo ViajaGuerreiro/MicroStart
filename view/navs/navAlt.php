@@ -27,7 +27,7 @@
               <a class="nav-link" href="../MicroStart/view/produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../MicroStart/contoller/alterarDadosCli.php">Dados</a>
+              <a class="nav-link" href="../MicroStart/contoller/alterarDadosCli.php">Usuario</a>
             </li>
              <!-- Plano empresarial -->
              <li class="nav-item">

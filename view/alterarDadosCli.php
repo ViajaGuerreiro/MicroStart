@@ -161,7 +161,7 @@
 
                         <div id="form-cadastro-descricao" class="col-md-6">
                             <label for="cxDescricao" class="form-label">Descrição:</label>
-                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="20" id="cxDescricao">
+                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="455" id="cxDescricao">
                         </div>
 
 
