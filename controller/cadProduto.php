@@ -38,16 +38,12 @@
         $produtoDao = new ProdutoDao();
         $produtoDao->create_prod($produto, $_SESSION['id']);
 
-        echo " <script>
-
-                    window.location.href = '../view/alterarDadosCli.php';
-                </scrip>";
+        echo('produto cadastrado com sucesso');
 
     } else {
         echo " <script>
-                    alert('Preencha todos os dados de cadastro');
+                    alert('Preencha todos os dados de cadastro do Produto');
 
-                    window.location.href = '../view/cadastrarProduto.php';
                 </script>";
     }
 ?>

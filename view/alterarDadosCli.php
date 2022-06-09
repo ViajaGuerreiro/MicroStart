@@ -28,29 +28,6 @@
         $linhas = $clienteDao->read($_SESSION['id']);
         $linhasProd = $produtoDao->read_prod_id($_SESSION['id']);
 
-        //imagem cadastra na pasta img/produtos porem não salva no banco de dados o caminho, e cada vez que recarrega a pagina a variavel $_FILES['img'] faz gerar uma cópia do arquivo anterior upado (LEMBRETE:ARRUMAR)
-        /*if (!$_FILES['img'] == null) {
-            if (isset($_FILES['img'])) {
-                $extensao = strtolower(substr($_FILES['img']['name'], -4));
-                $nome_img = md5(time() . $extensao);
-                $diretorio = 'img/produtos/';
-
-                $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio . $nome_img);
-            }
-        }
-        var_dump($nome_img);*/
-
-        /*// HTML Excluir depois
-        <!--<form action="cadastrarProduto.php" method="POST" enctype="multipart/form-data">
-            <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
-                    
-                    <input type="file" id="myFile" name="img">
-                </div>
-
-                <button>Cadastrar imagem</button>
-            </form>-->
-        */
-
 
         foreach ($linhas as $linha) {
 
