@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="../View/css/styledados.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- jQuery -->
-    
     <title>alterar dados do cliente</title>
 </head>
 
@@ -321,7 +319,7 @@
 <script>
     var btn = document.getElementById('btn-div');
     var container = document.querySelector('.container');
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', function() {
 
         if (container.style.display === 'block') {
             container.style.display = 'none';
@@ -331,7 +329,7 @@
     });
 
 /* Ajax form Cadastrar produto */
-console.log('teste');
+console.log($.ajax('teste')();
 </script>
 <!-- JS ESCONDER ALTERAR-->
 
