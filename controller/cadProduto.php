@@ -2,19 +2,17 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-   // var_dump($_files['img']);
-   // var_dump($nomeProduto);
 
-    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "") {
+    if($nomeProduto != "" && $preco != "" && $QIL != "" && $tamanho != "" && $disponivel != "" && $nomeMarca != "" && $categoria != "" && $_FILES['campoImg'] != null) {
         require_once("../model/Produto.php");
         require_once("../model/ProdutoDao.php");
 
-        if(isset($_FILES['img'])) {
-            $extensao = strtolower(substr($_FILES['img']['name'], -4));
+        if(isset($_FILES['campoImg'])) {
+            $extensao = strtolower(substr($_FILES['campoImg']['name'], -4));
             $nome_img = md5(time() . $extensao);
             $diretorio = '../view/img/produtos/';
         
-            $imagem = move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$nome_img);
+            $imagem = move_uploaded_file($_FILES['campoImg']['tmp_name'], $diretorio.$nome_img);
         
         }
         
@@ -27,6 +25,7 @@
         $produto->setTamanho($tamanho);
         $produto->setLotesDisponiveis($disponivel);
         $produto->setDescricao($descricao);
+        $produto->setImg($nome_img);
 
 
         //tabela marca
@@ -42,7 +41,7 @@
         echo " <script>
 
                     window.location.href = '../view/alterarDadosCli.php';
-                </script>";
+                </scrip>";
 
     } else {
         echo " <script>

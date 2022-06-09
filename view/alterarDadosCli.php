@@ -117,10 +117,10 @@
                 </div>
                 <div id="cont" style="display:none; margin-left:300px; padding:15px;" class="card col-md-6" style=" padding:30px; margin-top: 30px; margin-left: 350px;">
                     <h1 style="text-align: center;">Cadastrar Produto</h1>
-                    <form action="../controller/cadProduto.php" method="post" class="row g-3">
+                    <div id="formProd" class="row g-3">
                         <div id="form-cadastro-categoria" class="col-md-6">
                             <label for="cxCategoria" class="form-label">Categoria:</label>
-                            <select required type="text" class="form-control" name="categoria" id="cxCategoria">
+                            <select required type="text" class="form-control campo" name="categoria" id="cxCategoria">
                                 <option disabled selected>Selecione...</option>
                                 <option value="1">Moda</option>
                                 <option value="2">Tecnologia</option>
@@ -132,53 +132,53 @@
 
                         <div id="form-cadastro-marca" class="col-md-6">
                             <label for="cxMarca" class="form-label">Marca:</label>
-                            <input required type="text" class="form-control" name="nomeMarca" id="cxMarca">
+                            <input required type="text" class="form-control campo" name="nomeMarca" id="cxMarca">
                         </div>
 
 
                         <div id="form-cadastro-produto" class="col-md-6">
                             <label for="cxProduto" class="form-label">Produto:</label>
-                            <input required type="text" class="form-control" name="nomeProduto" minlength="5" maxlength="15" id="cxProduto">
+                            <input required type="text" class="form-control campo" name="nomeProduto" minlength="5" maxlength="15" id="cxProduto">
                         </div>
 
                         <div id="form-cadastro-preco" class="col-md-6">
                             <label for="cxPreco" class="form-label">Preço do Lote: </label>
                             <div class=" input-group" style="max-width: 400px;">
                                 <span class="input-group-text"> R$</span>
-                                <input required type="number" step="0.01" name="preco" min="0.01" class="form-control" id="cxPreco">
+                                <input required type="number" step="0.01" name="preco" min="0.01" class="form-control campo" id="cxPreco">
                             </div>
                         </div>
 
                         <div id="form-cadastro-QIL" class="col-md-6">
                             <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
-                            <input required type="number" class="form-control" name="QIL" id="cxQIL">
+                            <input required type="number" class="form-control campo" name="QIL" id="cxQIL">
                         </div>
 
                         <div id="form-cadastro-tamanho" class="col-md-6">
                             <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
-                            <input required type="text" class="form-control" name="tamanho" id="cxTamanho">
+                            <input required type="text" class="form-control campo" name="tamanho" id="cxTamanho">
                         </div>
 
                         <div id="form-cadastro-descricao" class="col-md-6">
                             <label for="cxDescricao" class="form-label">Descrição:</label>
-                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="455" id="cxDescricao">
+                            <input placeholder="Digite aqui..." type="text" class="form-control campo" style="height: 150px;" name="descricao" minlength="5" maxlength="455" id="cxDescricao">
                         </div>
 
 
                         <div id="form-cadastro-disponivel" class="col-md-6">
                             <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
-                            <input required type="number" class="form-control" name="disponivel" id="cxDisponivel">
+                            <input required type="number" class="form-control campo" name="disponivel" id="cxDisponivel">
                         </div>
                         <div id="form-cadastro-imagem" class="col-md-6">
                             <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
-                            <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
+                            <input id="imagem" type="file" name="img" title="Usar arquivo com dimensões 300x300">
                         </div>
                         <div id="img-container">
                             <img id="preview" src="" style="justify-content:center;">
                         </div>
 
-                        <a href="listaprodutos.html"> <button type="submit" class="btn btn-outline-primary btn-lg" style="float: right;" method="post">Cadastrar Produto</button> </a>
-                    </form>
+                        <a> <button id="#btnCadastrarProd" type="button" class="btn btn-outline-primary btn-lg btnCadastrarProd" style="float: right;" method="post">Cadastrar Produto</button> </a>
+                    </div>
                 </div>
 
 
@@ -304,25 +304,36 @@
         }
     }
 
-    document.getElementById("img-input").addEventListener("change", readImage, false);
+    document.getElementById("imagem").addEventListener("change", readImage, false);
 </script>
 <!-- JS IMAGEM -->
 
 <!-- JS ESCONDER DIV ALTERAR-->
 <script>
-    var btn = document.getElementById('btn-div');
-    var container = document.querySelector('.container');
-    btn.addEventListener('click', function() {
-
-        if (container.style.display === 'block') {
-            container.style.display = 'none';
-        } else {
-            container.style.display = 'block';
-        }
-    });
-
-
+    
 /* Ajax form Cadastrar produto */
+    let formData = new FormData();
+
+    document.getElementById("imagem").onchange = function(e) {
+        if(e.target.files != null && e.target.length != 0) {
+            formData.append("campoImg", e.target.files[0]);
+        }
+    };
+
+    $('.btnCadastrarProd').click(() => {
+
+        $.each($('.campo'), (index, element) => {
+            formData.append(element.name, element.value)
+        });
+
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function() {
+            if(xml.readyState === 4 && xml.status === 200)
+                alert(xml.responseText);
+        };
+        xml.open("POST", "../controller/cadProduto.php", true);
+        xml.send(formData);
+})
 
 </script>
 <!-- JS ESCONDER ALTERAR-->

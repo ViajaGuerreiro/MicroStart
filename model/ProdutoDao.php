@@ -26,7 +26,7 @@ class ProdutoDao
 
         //tabela produto
 
-        $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao) values ( ?,?,?, ?, ?, ?, ?, ?, ?)";
+        $sql2 = "INSERT INTO lote(cod_marca,cod_categoria,cod_cli, produto, preco_lote, quantidade_itens_lote, tamanho_do_item, lotes_disponiveis, descricao, img) values (?, ?,?,?, ?, ?, ?, ?, ?, ?)";
 
         $inserir = Conexao::getInstance()->prepare($sql2);
         $inserir->bindValue(1, $idMarca);
@@ -39,6 +39,7 @@ class ProdutoDao
         $inserir->bindValue(7, $produto->getTamanho());
         $inserir->bindValue(8, $produto->getLotesDisponiveis());
         $inserir->bindValue(9, $produto->getDescricao());
+        $inserir->bindValue(10,$produto->getImg());
         $inserir->execute();
     }
 
@@ -60,7 +61,7 @@ class ProdutoDao
 
     public function read_prod_id($id)
     {
-        $sql = "SELECT lote.cod_lote AS 'idProduto', lote.produto as 'Nome do Produto', lote.preco_lote as 'Preco', lote.tamanho_do_item  as 'Tamanho', lote.quantidade_itens_lote as 'Quantidade', lote.lotes_disponiveis as 'Disponivel', lote.descricao as 'Descricao', marca.nome as 'nomeMarca' FROM lote INNER JOIN marca on lote.cod_marca = marca.cod_marca WHERE cod_cli = ?";
+        $sql = "SELECT lote.cod_lote AS 'idProduto', lote.produto as 'Nome do Produto', lote.preco_lote as 'Preco', lote.tamanho_do_item  as 'Tamanho', lote.quantidade_itens_lote as 'Quantidade', lote.lotes_disponiveis as 'Disponivel', lote.descricao as 'Descricao', lote.img as 'imagem', marca.nome as 'nomeMarca' FROM lote INNER JOIN marca on lote.cod_marca = marca.cod_marca WHERE cod_cli = ?";
 
         $lerInfoProd = Conexao::getInstance()->prepare($sql);
         $lerInfoProd->bindValue(1, $id);
