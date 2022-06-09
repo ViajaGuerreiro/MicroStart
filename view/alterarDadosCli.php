@@ -9,6 +9,9 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>alterar dados do cliente</title>
+    <?php
+    include_once 'navs/navSairAlt.php';
+    ?>
 </head>
 
 <body>
@@ -16,7 +19,6 @@
     <main>
         <?php
         session_start();
-        include_once 'navSair.php';
         include_once '../controller/verificaLogin.php';
         require_once '../model/ClienteDao.php';
         require_once '../model/ProdutoDao.php';
@@ -159,7 +161,7 @@
 
                         <div id="form-cadastro-descricao" class="col-md-6">
                             <label for="cxDescricao" class="form-label">Descrição:</label>
-                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="20" id="cxDescricao">
+                            <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" minlength="5" maxlength="455" id="cxDescricao">
                         </div>
 
 
@@ -169,7 +171,7 @@
                         </div>
                         <div id="form-cadastro-imagem" class="col-md-6">
                             <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
-                            <input id="img-input" accept="image/jpeg" type="file" name="img" title="Usar arquivo com dimensões 300x300">
+                            <input id="img-input" type="file" name="imagem" title="Usar arquivo com dimensões 300x300">
                         </div>
                         <div id="img-container">
                             <img id="preview" src="" style="justify-content:center;">
@@ -181,20 +183,11 @@
 
 
                 <!-- CADASTRAR PRODUTO -->
-                <!--TESTE
- -------------------------------------------------------------------------------------------------------   -->
-                <form action="../controller/cadProduto.php" method="POST" enctype="multipart/form-data">
-            <div id="form-cadastro-imagem" id="form-cadastro-imagem" class="col-md-6">
-                    
-                    <input type="file" accept="image/jpeg" id="myFile" name="img">
-                </div>
-<!-- --------------------------------------------------------------------------------------- -->
-                <button>Cadastrar imagem</button>
-            </form>-->
 
 
                 <?php
             }
+
             if (!$linhasProd == null) {
                 foreach ($linhasProd as $linhaProd) {
 
@@ -233,37 +226,37 @@
 
                             <div id="form-cadastro-produto" class="col-md-6">
                                 <label for="cxProduto" class="form-label">Produto:</label>
-                                <input type="text" class="form-control" name="nomeProduto" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
+                                <input type="text" class="form-control" name="nomeProduto" maxlength="30" id="cxProduto" value="<?= $linhaProd['Nome do Produto'] ?>">
                             </div>
 
                             <div id="form-cadastro-preco" class="col-md-6">
                                 <label for="cxPreco" class="form-label">Preço do Lote: </label>
                                 <div class=" input-group" style="max-width: 400px;">
                                     <span class="input-group-text"> R$</span>
-                                    <input type="number" step="0.01" name="preco" min="0.01" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
+                                    <input type="number" step="0.01" name="preco" min="0.01" maxlength="10" class="form-control" id="cxPreco" value="<?= $linhaProd['Preco'] ?>">
                                 </div>
                             </div>
 
 
                             <div id="form-cadastro-QIL" class="col-md-6">
                                 <label for="cxQIL" class="form-label">Quantidade de itens do lote:</label>
-                                <input type="number" class="form-control" name="QIL" id="cxQIL" value="<?= $linhaProd['Quantidade'] ?>">
+                                <input type="number" class="form-control" name="QIL" id="cxQIL" maxlength="6" value="<?= $linhaProd['Quantidade'] ?>">
                             </div>
 
                             <div id="form-cadastro-tamanho" class="col-md-6">
                                 <label for="cxTamanho" class="form-label">Tamanho dos itens:</label>
-                                <input type="text" class="form-control" name="tamanho" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
+                                <input type="text" class="form-control" name="tamanho" maxlength="20" id="cxTamanho" value="<?= $linhaProd['Tamanho'] ?>">
                             </div>
 
                             <div id="form-cadastro-descricao" class="col-md-6">
-                                <label for="cxDescricao" class="form-label" minlength="5" maxlength="20">Descrição:</label>
-                                <input placeholder="Digite aqui..." type="text" class="form-control" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
+                                <label for="cxDescricao" class="form-label">Descrição:</label>
+                                <input placeholder="Digite aqui..." type="text" class="form-control" maxlength="500" style="height: 150px;" name="descricao" id="cxDescricao" value="<?= $linhaProd['Descricao'] ?>">
                             </div>
 
 
                             <div id="form-cadastro-disponivel" class="col-md-6">
                                 <label for="cxDisponivel" class="form-label">Lotes disponiveis:</label>
-                                <input type="number" class="form-control" name="disponivel" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
+                                <input type="number" class="form-control" name="disponivel" maxlength="6" id="cxDisponivel" value="<?= $linhaProd['Disponivel'] ?>">
                             </div>
                             <div id="form-cadastro-imagem" class="col-md-6">
                                 <label for="lblImagem" class="form-label">Adicionar imagem do produto:</label>
@@ -328,8 +321,9 @@
         }
     });
 
+
 /* Ajax form Cadastrar produto */
-console.log($.ajax('teste')();
+
 </script>
 <!-- JS ESCONDER ALTERAR-->
 

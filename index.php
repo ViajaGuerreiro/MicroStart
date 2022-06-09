@@ -36,16 +36,16 @@
 </head>
 
 <body>
-  <header>
+<header>
 <?php
 session_start();
   if(!isset($_SESSION['id'])) {
 
 ?>
     <nav class="navbar navbar-expand-dk navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="" width="30" height="30" alt="">
-          </a>
+        <a class="navbar-brand" href="index.php">
+            <img src="view/img/logoMS.png" width="50" height="50" alt="">
+        </a>
         <a class="navbar-brand" href="#">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
@@ -61,9 +61,8 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
-            <!-- Plano empresarial -->
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Novidades em breve...</a>
+              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
             </li>
           </ul>
         </div>
@@ -73,9 +72,9 @@ session_start();
   else {
 ?>
   <nav class="navbar navbar-expand-dk navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="" width="30" height="30" alt="">
-          </a>
+        <a class="navbar-brand" href="index.php">
+            <img src="view/img/logoMS.png" width="50" height="50" alt="">
+        </a>
         <a class="navbar-brand" href="#">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
@@ -83,17 +82,19 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="view/alterarDadosCli.php">Usuario</a>
+              <a class="nav-link" href="view/alterarDadosCli.php">Usuarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="controller/cadProduto.php">Cadastrar Produtos</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="controller/logout.php">Sair</a>
             </li>
-            <!-- Plano empresarial -->
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Novidades em breve...</a>
+              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
             </li>
           </ul>
         </div>
@@ -105,7 +106,7 @@ session_start();
 
   <section class="u-clearfix u-palette-1-base u-section-1" id="carousel_e8ba">
     <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-      <div class="u-expanded-width-xs u-shape u-shape-svg u-text-palette-3-base u-shape-1">
+      <div class="u-expanded-width-xs u-shape u-shape-svg u-text-palette-3-base u-shape-1" >
         <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 140" style="">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1b2f"></use>
         </svg>
@@ -119,10 +120,10 @@ session_start();
           </g>
         </svg>
       </div>
-      <img src="images/14-min.png" class="u-align-left u-image u-image-contain u-image-1" data-image-width="2941" data-image-height="1576">
-      <div class="u-align-left u-container-style u-expanded-width-xs u-group u-palette-1-light-3 u-radius-10 u-shape-round u-group-1">
+      <img src="view/img/Business.png" class="u-align-left u-image u-image-contain u-image-1" data-image-width="2941" data-image-height="1576"  style=" width: 50%; top: 60px; left:150px;">
+      <div style=" top: -190px; margin-right: 40px; " class="u-align-left u-container-style u-expanded-width-xs u-group u-palette-1-light-3 u-radius-10 u-shape-round u-group-1">
         <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
-          <h1 class="u-custom-font u-text u-text-palette-1-light-1 u-text-1"> MicroStart</h1>
+          <h1 class="u-custom-font u-text u-text-palette-1-light-1 u-text-1">MicroStart</h1>
           <p class="u-text u-text-2">A MicroStart é uma companhia que busca conectar pequenos empreendedores com fornecedores nacionais de forma rápida e fácil, impulsionando o seu próprio negócio!</p>
           <a href="" class="u-active-palette-1-light-1 u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-6 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-2">Empreenda conosco!</a>
         </div>
@@ -137,7 +138,7 @@ session_start();
       <div class="u-repeater u-repeater-1">
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-1">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
-            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1" data-image-width="700" data-image-height="500" src="images/11.png">
+            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1" data-image-width="700" data-image-height="500" src="view/img/produtos/Meias.jpg">
             <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Meias</h4>
             <p class="u-text u-text-4">50 Meias por apenas R$70,00!</p>
             <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
@@ -145,7 +146,7 @@ session_start();
         </div>
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-2">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
-            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-2" data-image-width="700" data-image-height="500" src="images/2.png">
+            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-2" data-image-width="700" data-image-height="500" src="view/img/produtos/smartwacth.jpg">
             <h4 class="u-text u-text-default u-text-palette-1-base u-text-5">Smart Watch</h4>
             <p class="u-text u-text-6">10 SmartWatches por apenas $300,00!</p>
             <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
@@ -154,7 +155,7 @@ session_start();
         </div>
         <div class="u-align-center u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round u-white u-list-item-3">
           <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
-            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="700" data-image-height="500" src="images/6c7decbc-d9d3-4316-5906-19d76e6c84f3.png">
+            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="700" data-image-height="500" src="view/img/produtos/DiscoVinil.jpg">
             <h4 class="u-text u-text-default u-text-palette-1-base u-text-7">Disco de Vinil</h4>
             <p class="u-text u-text-8">10 Discos de Vinil por apenas R$120,00! </p>
             <a href="view/produtos.php" class="u-active-palette-1-light-2 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-3-base u-radius-6 u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-1-base u-btn-3">Compre aqui!</a>
@@ -372,10 +373,9 @@ session_start();
 
   </section>
   <section class="u-clearfix u-palette-1-base u-section-8" id="carousel_2ad0">
-    <div class="u-shape u-shape-rectangle u-white u-shape-1"></div>
     <div class="u-list u-list-1">
       <div class="u-repeater u-repeater-1">
-        <div class="u-align-center u-container-style u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1">
+        <div class="u-align-center u-container-style u-list-item u-palette-5-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-1">
           <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 52 52" style="">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-077e"></use>
               </svg><svg class="u-svg-content" viewBox="0 0 52 52" x="0px" y="0px" id="svg-077e" style="enable-background:new 0 0 52 52;">
@@ -387,7 +387,7 @@ session_start();
             <p class="u-text u-text-2">Etec de Guarulhos - SP</p>
           </div>
         </div>
-        <div class="u-align-center u-container-style u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-2">
+        <div class="u-align-center u-container-style u-list-item u-palette-5-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-2">
           <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 513.64 513.64" style="">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9786"></use>
               </svg><svg class="u-svg-content" viewBox="0 0 513.64 513.64" x="0px" y="0px" id="svg-9786" style="enable-background:new 0 0 513.64 513.64;">
@@ -402,7 +402,7 @@ session_start();
             </p>
           </div>
         </div>
-        <div class="u-align-center u-container-style u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-3">
+        <div class="u-align-center u-container-style u-list-item u-palette-5-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-3">
           <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style="">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d01e"></use>
               </svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-d01e">
@@ -414,7 +414,7 @@ session_start();
             <p class="u-text u-text-6">Auxiliar e impulsionar o próprio negócio de iniciantes e pequenos empreendedores!</p>
           </div>
         </div>
-        <div class="u-align-center u-container-style u-list-item u-palette-1-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-4">
+        <div class="u-align-center u-container-style u-list-item u-palette-5-light-3 u-radius-10 u-repeater-item u-shape-round u-list-item-4">
           <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style="">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9f82"></use>
               </svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-9f82" style="enable-background:new 0 0 512 512;">

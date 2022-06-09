@@ -46,9 +46,9 @@ if ($nomeProduto != "" && $precoLote != "" && $quantidadeComprar != "" && $tipoE
     $prefences->items = array($produtoCom);
 
     $prefences->back_urls = array(
-        "success" => 'localhost:8080/microstart/View/pagSucesso.php',
-        "failure" => 'localhost:8080/microstart/View/pagFalha.php',
-        "pending" => 'localhost:8080/microstart/View/pagPendente.php'
+        "success" => 'localhost/microstart/View/pagSucesso.php',
+        "failure" => 'localhost/microstart/View/pagFalha.php',
+        "pending" => 'localhost/microstart/View/pagPendente.php'
     );
 
     $prefences->notification_url = 'localhost/microstart/View/notificacao.php';
