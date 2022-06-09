@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar navbar-expand-dk navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="./img/logoMS.png" width="50" height="50" alt="">
+      <img src="img/logoMS.png" width="50" height="50" alt="">
     </a>
     <a class="navbar-brand" href="../index.php">MicroStart</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -23,10 +23,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="./alterarDadosCli.php">Usuarios</a>
+          <a class="nav-link" href="alterarDadosCli.php">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./produtos.php">Produtos</a>
+          <a class="nav-link" href="produtos.php">Produtos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../controller/logout.php">Sair</a>

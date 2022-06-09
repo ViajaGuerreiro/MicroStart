@@ -11,8 +11,8 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-dk navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="" width="30" height="30" alt="">
+        <a class="navbar-brand" href="../index.php">
+            <img src="img/logoMS.png" width="30" height="30" alt="">
           </a>
         <a class="navbar-brand" href="../index.php">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="../MicroStart/view/loginCli.php">Entrar</a>
+              <a class="nav-link" href="loginCli.php">Entrar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../MicroStart/view/produtos.php">Produtos</a>
+              <a class="nav-link" href="cadastrarCli.php">Cadastrar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../MicroStart/contoller/alterarDadosCli.php">Usuario</a>
+              <a class="nav-link" href="produtos.php">Produtos</a>
             </li>
              <!-- Plano empresarial -->
              <li class="nav-item">

@@ -46,7 +46,7 @@ session_start();
         <a class="navbar-brand" href="index.php">
             <img src="view/img/logoMS.png" width="50" height="50" alt="">
         </a>
-        <a class="navbar-brand" href="#">MicroStart</a>
+        <a class="navbar-brand" href="index.php">MicroStart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -86,9 +86,6 @@ session_start();
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/produtos.php">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="controller/cadProduto.php">Cadastrar Produtos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="controller/logout.php">Sair</a>

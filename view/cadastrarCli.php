@@ -10,7 +10,30 @@ include_once '../controller/verificaLogado.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../view/css/cadCli.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>cadastro</title>
+
+    <script>
+        $(document).ready(() => {
+            $('#cep').keyup(() => {
+            var numCep = $('#cep').val();
+            var url = "https://viacep.com.br/ws/"+numCep+"/json";
+
+            $.ajax({
+                url: url,
+                type: "get",
+                dataType: "json",
+                success: (dados) => {
+                    $('#localidade').val(dados.localidade)
+                    $('#logradouro').val(dados.logradouro);
+                    $('#bairro').val(dados.bairro);
+                    $('#uf').val(dados.uf);
+                }
+
+            })
+        })
+        })
+    </script>
 </head>
 
 <body style="background: -webkit-linear-gradient(to left, rgb(153, 206, 255), rgb( 233, 243, 250));
@@ -79,12 +102,12 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
                         <h1>Cadastrar endereço</h1>
                         <div id="form-cadastro-cep">
                             <label for="cxCep">CEP:</label>
-                            <input maxlength="8" required type="text" name="cep" id="cxCep">
+                            <input maxlength="8" required type="text" name="cep" id="cep">
                         </div>
 
                         <div id="form-cadastro-rua">
                             <label for="cxRua">Rua:</label>
-                            <input readonly type="text" id="cxRua">
+                            <input readonly type="text" id="logradouro">
                         </div>
 
                         <div id="form-cadastro-numero">
@@ -99,22 +122,17 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
 
                         <div id="form-cadastro-cidade">
                             <label for="cxCidade">Cidade:</label>
-                            <input readonly type="text" id="cxCidade">
+                            <input readonly type="text" id="localidade">
                         </div>
 
                         <div id="form-cadastro-bairro">
                             <label for="cxBairro">Bairro:</label>
-                            <input readonly type="text" id="cxBairro">
+                            <input readonly type="text" id="bairro">
                         </div>
 
                         <div id="form-cadastro-UF">
                             <label for="cxUF">UF:</label>
-                            <input readonly type="text" id="cxUF">
-                        </div>
-
-                        <div id="form-cadastro-pais">
-                            <label for="cxPais">País:</label>
-                            <input readonly type="text" id="cxPais">
+                            <input readonly type="text" id="uf">
                         </div>
                     </div>
                     <button type="submit">Cadastrar</button>

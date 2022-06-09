@@ -30,11 +30,11 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
     <?php
         $produtoDao = new ProdutoDao();
         if(!isset($_SESSION['id'])) {
-            include_once 'navs/navProd.php';
+            include_once 'navs/navAlt.php';
             $linhas = $produtoDao->read_prod(''); 
         }
         else {
-            include_once 'navs/navSairProd.php';
+            include_once 'navs/navSairAlt.php';
             $linhas = $produtoDao->read_prod($_SESSION['id']);
         }
         if (!$linhas == null) {
