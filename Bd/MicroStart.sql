@@ -66,6 +66,7 @@ cod_lote int primary key auto_increment
 , lotes_disponiveis int(6) not null
 , ativo varchar(1) default "S" not null
 , descricao varchar(500)
+, img varchar(100)
 , constraint cod_cli_lote foreign key(cod_cli) references cliente(cod_cli)
 , constraint cod_marca foreign key(cod_marca) references marca(cod_marca)
 , constraint cod_categoria foreign key(cod_categoria) references categoria(cod_categoria)
@@ -123,3 +124,4 @@ DELIMITER $
 		END IF;
 	END
 $
+
