@@ -12,7 +12,7 @@
 
 <body>
   <nav class="navbar navbar-expand-dk navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="../index.php">
       <img src="img/logoMS.png" width="50" height="50" alt="">
     </a>
     <a class="navbar-brand" href="../index.php">MicroStart</a>

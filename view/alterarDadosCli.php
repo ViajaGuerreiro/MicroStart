@@ -53,6 +53,10 @@
                         <label class="form-label" for="cxCNPJ">CNPJ:</label>
                         <input class="form-control" maxlength="18" type="text" name="cnpj" id="cxCNPJ" value="<?= $linha['cnpj_cli'] ?>">
                     </div>
+                    <div class="col-3" id="form-alterar-ramo">
+                        <label class="form-label" for="cxRamo">Ramo:</label>
+                        <input class="form-control" maxlength="18" type="text" name="ramo" id="cxRamo" value="<?= $linha['ramo_cli'] ?>">
+                    </div>
                     <div class="col-md-6" id="form-alterar-email">
                         <label class="form-label" for="cxEmail">Email</label>
                         <input class="form-control" type="email" name="email" id="cxEmail" value="<?= $linha['email_cli'] ?>">

@@ -88,6 +88,11 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
                                 <input maxlength="18" required type="text" name="cnpj" id="cxCNPJ">
                             </div>
 
+                            <div id="form-cadastro-ramo">
+                                <label for="cxRamo">Ramo da empresa:</label>
+                                <input maxlength="18" required type="text" name="ramo" id="cxRamo">
+                            </div>
+
                             <div id="form-cadastro-email">
                                 <label for="cxEmail">Email</label>
                                 <input required type="email" name="email" id="cxEmail">

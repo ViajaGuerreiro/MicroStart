@@ -7,10 +7,10 @@ cod_cli int primary key auto_increment
 , nome varchar(20) not null
 , sobrenome varchar(20) not null
 , data_nasc date not null
+, segEmpresa varchar(60) not null
 , cnpj varchar(18) not null
 , email varchar(50) not null
 , senha varchar(100) not null
--- Deixar valor default(G) (G para gratuito e P para premium)
 , plano char(1) default 'G' not null
 );
 
@@ -86,6 +86,7 @@ cod_trans int primary key auto_increment
 );
 
 insert into transportadora(nome) values
+ ("MicroExpress"),
  ("sedex"),
  ("pac"),
  ("correio"),

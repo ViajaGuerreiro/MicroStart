@@ -12,6 +12,7 @@
         $cliente->setSobrenome($sobrenome);
         $cliente->setDataNasc($data_nasc);
         $cliente->setCnpj($cnpj);
+        $cliente->setRamo($ramo);
         $cliente->setEmail($email);
         $cliente->setSenha($senha);
 
@@ -21,5 +22,5 @@
         echo " <script>
                     alert('Dados alterados com sucesso');
 
-                    window.location.href = '../index.php';
+                    window.location.href = '../view/alterarDadosCli.php';
                 </script>";

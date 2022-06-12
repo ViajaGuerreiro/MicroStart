@@ -4,7 +4,7 @@ class Cliente
 {
 
 //tabela cliente
-    private $cod, $nome, $sobrenome, $cnpj, $dataNasc, $email, $senha, $plano;
+    private $cod, $nome, $sobrenome, $cnpj, $ramo, $dataNasc, $email, $senha, $plano;
 
     public function getCod() {
         return $this->cod;
@@ -36,6 +36,14 @@ class Cliente
 
     public function setCnpj($cnpj) {
         $this->cnpj = $cnpj;
+    }
+
+    public function getRamo() {
+        return $this->ramo;
+    }
+
+    public function setRamo($ramo) {
+        $this->ramo = $ramo;
     }
 
     public function getDataNasc() {

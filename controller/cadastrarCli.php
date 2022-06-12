@@ -2,7 +2,7 @@
     session_start();
     extract($_REQUEST, EXTR_OVERWRITE);
 
-    if($nome != "" && $sobrenome != "" && $data_nasc != "" && $cnpj != "" && $email != "" && $senha != "" && $ddd1 != "" && $tel1 != "" && $cep != "" && $numero != "") {
+    if($nome != "" && $sobrenome != "" && $data_nasc != "" && $cnpj != "" && $ramo != "" && $email != "" && $senha != "" && $ddd1 != "" && $tel1 != "" && $cep != "" && $numero != "") {
         require_once("../model/Cliente.php");
         require_once("../model/ClienteDao.php");
         
@@ -13,6 +13,7 @@
         $cliente->setSobrenome($sobrenome);
         $cliente->setDataNasc($data_nasc);
         $cliente->setCnpj($cnpj);
+        $cliente->setRamo($ramo);
         $cliente->setEmail($email);
         $cliente->setSenha($senha);
 
