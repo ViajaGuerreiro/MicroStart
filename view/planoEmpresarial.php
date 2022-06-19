@@ -218,6 +218,14 @@
         </style>
     </head>
   <body class="u-body u-xl-mode">
+  <?php
+        if(!isset($_SESSION['id'])) {
+            include_once 'navs/navAlt.php'; 
+        }
+        else {
+            include_once 'navs/navSairAlt.php';
+        }
+    ?>
         <section class="u-align-left u-clearfix u-section-2" id="carousel_d1de">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">

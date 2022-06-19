@@ -91,7 +91,7 @@ session_start();
               <a class="nav-link" href="controller/logout.php">Sair</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="view/planoEmpresarial.php">Plano Empresarial</a>
+              <a class="nav-link" href="view/planoEmpresarial.php">Plano Empresarial</a>
             </li>
           </ul>
         </div>
