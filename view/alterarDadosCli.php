@@ -169,11 +169,13 @@
                 <?php
             }
 
+            ?>
+                    <div id="form-alterar">
+            <?php	
             if (!$linhasProd == null) {
                 foreach ($linhasProd as $linhaProd) {
 
                 ?>
-                    <div id="form-alterar">
                         <table class="records">
                             <thead>
                                 <tr>
@@ -187,13 +189,14 @@
                                     <td><?= $linhaProd['Nome do Produto'] ?></td>
                                     <td><?= $linhaProd['Preco'] ?></td>
                                     <td id="crud">
-                                        <button id="btn-div" type="submit" class="btn">visualizar</button>
+                                        <button id="btn-div" type="submit" class="btn btn-div-prod">visualizar</button>
                                         <a href="../controller/deletarDadosProd.php?idProduto=<?php echo $linhaProd['idProduto']; ?>"> <button id="btnAlterar" type="submit" class="btn"> Excluir</button></a>
 
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+
 
                     </div>
 
@@ -203,6 +206,10 @@
                                 <label for="cxMarca" class="form-label">Marca:</label>
                                 <input type="text" readonly value="<?= $linhaProd['nomeMarca'] ?>" class="form-control" name="nomeMarca" id="cxMarca">
                             </div>
+
+                        
+                                <input type="hidden" value='<?=$linhaProd['idProduto']?>' name="idProduto">
+                            
 
 
                             <div id="form-cadastro-produto" class="col-md-6">
@@ -250,12 +257,13 @@
                                 <button id="btnAlterar" type="submit" class="btn"> Alterar dados</button>
                             </div>
                         </form>
-
-    </main>
-<?php
+                    </div>
+                    <?php
                 }
             }
 ?>
+
+    </main>
 
 <!-- JS DIV CADASTRAR -->
 
@@ -272,6 +280,23 @@
     });
 </script>
 <!-- JS DIV CADASTRAR -->
+
+<!-- JS DIV VISUALIZAR -->
+
+<script>
+    var btn = document.getElementsByClassName('btn-div-prod')[0];
+    var container = document.querySelector('.container');
+    btn.addEventListener('click', function() {
+
+        if (container.style.display === 'block') {
+            container.style.display = 'none';
+        } else {
+            container.style.display = 'block';
+        }
+    });
+</script>
+
+<!-- JS DIV VISUALIZAR -->
 
 <!-- JS IMAGEM -->
 <script>

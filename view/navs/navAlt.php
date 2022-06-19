@@ -31,7 +31,7 @@
             </li>
              <!-- Plano empresarial -->
              <li class="nav-item">
-              <a class="nav-link disabled" href="#">Novidades em breve...</a>
+              <a class="nav-link disabled" href="planoEmpresarial.php">Plano Empresarial</a>
             </li>
           </ul>
         </div>

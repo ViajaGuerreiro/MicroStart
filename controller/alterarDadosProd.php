@@ -19,8 +19,8 @@
         $produtoDao = new ProdutoDao();
         $produtoDao->update_prod($produto);
         //Lembrete: Direcionar pagina depois.
-        echo " <script>
+      /*  echo " <script>
                     alert('Dados do produto alterados com sucesso');
 
                     window.location.href = '../index.php';
-                </script>";
+                </script>";*/

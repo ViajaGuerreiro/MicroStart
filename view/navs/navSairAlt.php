@@ -31,7 +31,7 @@
           <a class="nav-link" href="../controller/logout.php">Sair</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Novidades em Breve...</a>
+          <a class="nav-link disabled" href="planoEmpresarial.php">Plano Empresarial</a>
         </li>
       </ul>
     </div>

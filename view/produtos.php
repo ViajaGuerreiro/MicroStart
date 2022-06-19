@@ -98,7 +98,7 @@ background: linear-gradient(to left,rgb(153, 206, 255), rgb( 233, 243, 250));">
                 <div class="containerCard">
                         <div class="contCard">
                             <div class="textoProduto">
-                                <img src="img/produtos/<?= $linha['img']?>" alt="">
+                                <img class="imgProduto" src="img/produtos/<?= $linha['img']?>" alt="">
                                 <h1 class="nomeProd"> <?= $linha['produto'] ?> </h1>
                                 </br>
                                 <p class="descProd">

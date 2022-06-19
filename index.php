@@ -62,7 +62,7 @@ session_start();
               <a class="nav-link" href="view/produtos.php">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
+              <a class="nav-link disabled" href="view/planoEmpresarial.php">Plano Empresarial</a>
             </li>
           </ul>
         </div>
@@ -91,7 +91,7 @@ session_start();
               <a class="nav-link" href="controller/logout.php">Sair</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Novidades em Breve...</a>
+              <a class="nav-link disabled" href="view/planoEmpresarial.php">Plano Empresarial</a>
             </li>
           </ul>
         </div>
@@ -191,7 +191,8 @@ session_start();
                         </g>
                       </g>
                     </svg>
-                  </div>Frete grátis
+                  </div>
+                  Frete grátis
                 </li>
                 <li>
                   <div class="u-list-icon u-list-icon-3">

@@ -381,10 +381,9 @@ display: flex;
 }
 
 .imgProduto {
-    border-style: solid;
     border-radius: 10px;
-    border-width: 3px;
-    border-color: #4a4a4d;
+    max-width: 250px;
+    max-height: 200px;
 }
 
 .textoProduto {
@@ -397,6 +396,7 @@ display: flex;
 .nomeProd {
     font-weight: 600;
     color: rgb(71,138,201);
+    margin-top: 10px;
     margin-bottom: -5px;
     text-transform: uppercase;
     font-family: arial;
@@ -420,11 +420,12 @@ display: flex;
 }
 
 .descProd {
+    margin-top: -20px;
     font-size: 15pt;
     font-weight: 500;
     font-family: Calibri;
     color: black;
-    text-align: justify;
+    text-align: center;
     justify-items: flex-start;
     justify-content: flex-start;
     align-items: flex-start;

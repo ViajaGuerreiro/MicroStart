@@ -68,77 +68,84 @@ if ($nomeProduto == null) {
             <section class="u-align-center u-clearfix u-section-1" id="sec-4496">
               <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
                 <div class="u-container-style u-expanded-width u-product u-product-1">
-                  <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1">
-                    <!--product_image-->
-                    <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="img/produtos/<?=$linha['imagem']?>">
-                    <!--/product_image-->
-                    <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1" style="">
+                  <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1"  style="justify-content: center; align-items: center; display:flex;">
+                    <!--imagem-->
+                    <Table style="float:left">
+                    <tr>
+                    <img alt="" style="margin-left:300px; height: 800px; width: 1000px; margin-left: 30px;" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="img/produtos/<?=$linha['imagem']?>">
+
+                    </tr>
+                  </Table>
+                    <!--/imagem-->
+                    <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left- u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1" style="">
                       <div class="u-container-layout u-valign-middle u-container-layout-2">
-                        <h2 style="color:rgb(66, 136, 187); font-family: candara;text-transform: uppercase; font-weight: bolder; text-align: center;">
+                      <div class="container">
+                        <h2 style="color:rgb(66, 136, 187); font-family: candara;text-transform: uppercase; font-weight: bolder; text-align: left;">
                           <?= $nomeProduto ?>
                         </h2>
-                        <!-- não mexer -->
-                        <input type="hidden" value="<?=$linha['idProduto']?>" name="idProduto">
-                        <input type="hidden" value="<?=$nomeProduto?>" name="nomeProduto">
-                        <div class="u-custom-font u-font-merriweather u-product-control u-product-price u-product-price-1">
-                          <div class="u-price-wrapper u-spacing-10">
-                            <div class="u-price u-text-palette-4-base" style="color: green; font-family: calibri; font-size: x-large; font-weight: bold;">$<?= $linha['Preco'] ?></div>
-                            <!-- não mexer -->
-                            <input type="hidden" value="<?= $linha['Preco']?>" name="precoLote">
-                          </div>
-                        </div>
-                        <div style="font-family: calibri; font-size: x-large; font-weight: bold; color: black;">
-                          <p> <?= $linha['Descricao'] ?></p>
-                        </div>
-                        <div style="font-family: calibri; font-size: larger; font-weight: bold; color: black;">
-                          <h4 style="color:rgb(66, 136, 187); font-family: calibri;text-transform: uppercase; font-weight: bolder;">
-                            Detalhes:
-                          </h4>
-                          <p for="cxTaxa">Taxa adicional de <?= $taxa ?></br>
-                            Quantidade de itens por lote: <?= $linha['Quantidade'] ?> </br>
-                            Tamanhos: <?= $linha['Tamanho'] ?></br>
-                            Disponíveis: <?= $linha['Disponivel'] ?></br>
-                            Descrição: <?= $linha['Descricao'] ?></br>
-                          </p>
-                        </div>
-                        </br>
-                        <div>
-                          <label for="cxDisponivel" style="font-family: calibri; font-size: x-large; font-weight: bold; color: rgb(66, 136, 187);">
-                            Escolha quantos lotes deseja:
-                          </label>
-                          <input required min="1" max="<?= $linha['Disponivel'] ?>" type="number" name="quantidadeComprar" id="cxDisponivel" style="border-style: groove; border-radius: 5px; border-color: rgba(255, 255, 255, 0.422);">
-                        </div>
-                        <div style="font-family: calibri; font-size: large; ">
-                          <p> <label for="envio" style="color:rgb(66, 136, 187); font-family: calibri;font-weight: bolder; font-size: x-large;">
-                              Método de envio:
-                            </label>
-                            <select required name="tipoEnvio" id="envio" style="border-style: groove; border-radius: 5px; border-color: grey;">
-                              <option disabled selected>Selecione...</option>
-                              <option value="1">Sedex (<?= $frete ?>)</option>
-                              <option value="2">Pac (<?= $frete ?>)</option>
-                              <option value="3">JetLog (<?= $frete ?>)</option>
-                              <option value="4">Retirada</option>
-                            </select>
-                          </p>
-                        </div>
-                        </br>
-                        <?php
-                        if (isset($_SESSION['id'])) {
-                        ?>
-                          <button class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" style="background-color:rgb(66, 136, 187); border-radius: 5px; color:white; font-weight: bold; margin-left: 100px;">
-                            Comprar
-                          </button>
+                              <!-- não mexer -->
+                              <input type="hidden" value="<?=$linha['idProduto']?>" name="idProduto">
+                              <input type="hidden" value="<?=$nomeProduto?>" name="nomeProduto">
+                              <hr style="dotted #cecece;">
 
-                        <?php
-                        } else {
-                        ?>
-                          <a href="loginCli.php">Faça login</a>
-                        <?php
-                        }
-                        ?>
+                              <div class="u-custom-font u-font-merriweather u-product-control u-product-price u-product-price-1">
+                                <div class="u-price-wrapper u-spacing-10">
+                                  <div class="u-price u-text-palette-4-base" style="color: green; font-family: calibri; font-size: x-large; font-weight: bold;">$<?= $linha['Preco'] ?></div>
+                                  <!-- /não mexer -->
+                                  <input type="hidden" value="<?= $linha['Preco']?>" name="precoLote">
+                                </div>
+                              </div>
+                              <div style="font-family: calibri; font-size: x-large; font-weight: bold; color: black;">
+                                <p> <?= $linha['Descricao'] ?></p>
+                              </div>
+                              <div style="font-family: calibri; font-size: larger; font-weight: bold; color: black;">
+                                <h4 style="color:rgb(66, 136, 187); font-family: calibri;text-transform: uppercase; font-weight: bolder;">
+                                  Detalhes:
+                                </h4>
+                                <p for="cxTaxa">Taxa adicional de <?= $taxa ?></br>
+                                  Quantidade de itens por lote: <?= $linha['Quantidade'] ?> </br>
+                                  Tamanhos: <?= $linha['Tamanho'] ?></br>
+                                  Disponíveis: <?= $linha['Disponivel'] ?></br>
+                                  Descrição: <?= $linha['Descricao'] ?></br>
+                                </p>
+                              </div>
+                              </br>
+                              <div>
+                                <label for="cxDisponivel" style="font-family: calibri; font-size: x-large; font-weight: bold; color: rgb(66, 136, 187);">
+                                  Escolha quantos lotes deseja:
+                                </label>
+                                <input required min="1" max="<?= $linha['Disponivel'] ?>" type="number" name="quantidadeComprar" id="cxDisponivel" style="border-style: groove; border-radius: 5px; border-color: rgba(255, 255, 255, 0.422);">
+                              </div>
+                              <div style="font-family: calibri; font-size: large; ">
+                                <p> <label for="envio" style="color:rgb(66, 136, 187); font-family: calibri;font-weight: bolder; font-size: x-large;">
+                                    Método de envio:
+                                  </label>
+                                  <select required name="tipoEnvio" id="envio" style="border-style: groove; border-radius: 5px; border-color: grey;">
+                                    <option disabled selected>Selecione...</option>
+                                    <option value="1">Sedex (<?= $frete ?>)</option>
+                                    <option value="2">Pac (<?= $frete ?>)</option>
+                                    <option value="3">JetLog (<?= $frete ?>)</option>
+                                    <option value="4">Retirada</option>
+                                  </select>
+                                </p>
+                              </div>
+                              </br>
+                              <?php
+                              if (isset($_SESSION['id'])) {
+                              ?>
+                                <button class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" style="background-color:rgb(66, 136, 187); border-radius: 5px; color:white; font-weight: bold; margin-left: 100px;">
+                                  Comprar
+                                </button>
+
+                              <?php
+                              } else {
+                              ?>
+                                <a href="loginCli.php">Faça login</a>
+                              <?php
+                              }
+                              ?>
+                            </div>
                       </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </section>
@@ -150,6 +157,7 @@ if ($nomeProduto == null) {
         </div>
     </div>
   </header>
+
 <?php
       }
 ?>
